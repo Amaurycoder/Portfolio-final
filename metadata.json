@@ -1,0 +1,5 @@
+{
+  "name": "Onymousan Photography",
+  "description": "A minimalist, high-performance photography portfolio featuring a masonry gallery, dark mode support, and smooth transitions. Built with React, TypeScript, and Tailwind CSS.",
+  "requestFramePermissions": []
+}

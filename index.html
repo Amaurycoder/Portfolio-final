@@ -36,8 +36,7 @@
           "jobTitle": "Photographe de Rue",
           "image": "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg?auto=compress&cs=tinysrgb&w=1200",
           "sameAs": [
-            "https://www.instagram.com/onymou.san/",
-            "https://www.pexels.com/fr-fr/@amaurymic/highlights/"
+            "https://www.instagram.com/onymou.san/"
           ],
           "address": {
             "@type": "PostalAddress",
@@ -93,12 +92,16 @@
             },
             animation: {
               'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'shimmer': 'shimmer 1.5s infinite',
             },
             keyframes: {
               fadeInUp: {
                 '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
               },
+              shimmer: {
+                '100%': { transform: 'translateX(100%)' },
+              }
             },
           },
         },
@@ -167,6 +170,20 @@
       .animate-load.loaded {
         opacity: 1;
       }
+
+      /* Typographic Text Stroke for Destinations */
+      .text-stroke {
+        -webkit-text-stroke: 1px rgba(0,0,0,0.1);
+        color: transparent;
+      }
+      .dark .text-stroke {
+        -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+        color: transparent;
+      }
+      .group:hover .text-stroke {
+        -webkit-text-stroke: 0;
+        color: inherit;
+      }
     </style>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-black dark:text-white transition-colors duration-300 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
@@ -186,16 +203,13 @@
                 <div class="hidden md:flex space-x-8 items-center">
                     <a href="#gallery" class="nav-link text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors text-xs uppercase tracking-widest font-medium" data-i18n="nav_gallery">Portfolio</a>
                     <a href="#about" class="nav-link text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors text-xs uppercase tracking-widest font-medium" data-i18n="nav_about">À Propos</a>
-                    <a href="#destinations" class="nav-link text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors text-xs uppercase tracking-widest font-medium" data-i18n="nav_destinations">Futurs Voyages</a>
+                    <a href="#destinations" class="nav-link text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors text-xs uppercase tracking-widest font-medium" data-i18n="nav_destinations">Voyages</a>
+                    <a href="#contact" class="nav-link text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors text-xs uppercase tracking-widest font-medium" data-i18n="nav_contact">Contact</a>
                     
                     <div class="h-4 w-px bg-neutral-300 dark:bg-neutral-700"></div>
 
                     <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" aria-label="Instagram">
                         <span class="text-xs uppercase tracking-widest font-medium">Instagram</span>
-                    </a>
-                    <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="px-4 py-2 border border-neutral-300 dark:border-white/30 text-neutral-900 dark:text-white text-xs uppercase tracking-widest hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center gap-2" aria-label="Pexels">
-                        <span>Pexels</span>
-                        <span class="material-symbols-outlined text-sm">open_in_new</span>
                     </a>
                     
                     <div class="flex items-center gap-2">
@@ -228,9 +242,9 @@
             <div class="px-4 pt-2 pb-6 space-y-1 text-center shadow-xl">
                 <a href="#gallery" class="mobile-nav-link block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5" data-i18n="nav_gallery">Portfolio</a>
                 <a href="#about" class="mobile-nav-link block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5" data-i18n="nav_about">À Propos</a>
-                <a href="#destinations" class="mobile-nav-link block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5" data-i18n="nav_destinations">Futurs Voyages</a>
+                <a href="#destinations" class="mobile-nav-link block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5" data-i18n="nav_destinations">Voyages</a>
+                <a href="#contact" class="mobile-nav-link block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5" data-i18n="nav_contact">Contact</a>
                 <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5">Instagram</a>
-                <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="block px-3 py-3 font-bold text-sm uppercase tracking-widest bg-neutral-100 dark:bg-white/10 mt-2 text-black dark:text-white">Pexels</a>
             </div>
         </div>
     </nav>
@@ -266,10 +280,6 @@
                 <h2 class="text-4xl md:text-6xl font-serif text-black dark:text-white" data-i18n="gallery_title">Highlights</h2>
                 <p class="text-neutral-500 text-xs md:text-sm mt-3 uppercase tracking-[0.2em]" data-i18n="gallery_subtitle">Sélection Parisienne</p>
             </div>
-            <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" aria-label="Voir le profil Pexels">
-                <span data-i18n="link_pexels">Voir tout sur Pexels</span>
-                <span class="material-symbols-outlined text-sm">north_east</span>
-            </a>
         </div>
 
         <!-- Editorial Grid Layout (12 Columns) -->
@@ -287,7 +297,9 @@
             </div>
             <h2 class="text-3xl md:text-5xl font-serif mb-8 md:mb-10 text-black dark:text-white" data-i18n="about_title">Dynamique & Urbain</h2>
             <p class="text-neutral-600 dark:text-neutral-400 text-lg md:text-xl leading-relaxed font-light">
-                <span data-i18n="about_text" data-html="true">Je vis à <strong class="text-black dark:text-white font-normal">Paris</strong>, au cœur du mouvement. Mon travail se nourrit de l'énergie brute de la rue et des instants fugaces. Mais mon objectif ne s'arrête pas au périphérique : je suis un photographe tourné vers l'ailleurs, avec l'ambition de confronter mon regard aux gratte-ciels de <strong class="text-black dark:text-white font-normal">New York</strong> et aux néons du <strong class="text-black dark:text-white font-normal">Japon</strong>.</span>
+                <span data-i18n="about_text" data-html="true">
+                    Ingénieur de formation, je cherche dans la rue le <strong>chaos organique</strong> qui manque à la rigueur de mes équations. C'est une confrontation constante entre l'ordre et l'instinct. Face au tumulte urbain, j'adopte la posture de Camus : une acceptation lucide de l'<strong>Absurde</strong>. Figer l'instant, c'est ma façon d'imaginer Sisyphe heureux.
+                </span>
             </p>
             <div class="mt-10 md:mt-12 flex flex-wrap justify-center gap-3 md:gap-4">
                 <span class="px-4 md:px-6 py-2 md:py-3 border border-neutral-300 dark:border-white/20 rounded-full text-[10px] md:text-xs uppercase tracking-widest text-neutral-500 dark:text-neutral-300" data-i18n="tag_street">Street Photography</span>
@@ -298,38 +310,34 @@
     </section>
 
     <!-- Destinations -->
-    <section id="destinations" class="py-24 md:py-32 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-white/5 transition-colors duration-300" style="content-visibility: auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 md:mb-20">
-                <h2 class="text-3xl md:text-4xl font-serif text-black dark:text-white mb-4" data-i18n="dest_title">Prochaines Visions</h2>
-                <div class="w-24 h-px bg-black dark:bg-white mx-auto mt-6"></div>
+    <section id="destinations" class="py-24 md:py-32 bg-neutral-100 dark:bg-neutral-950 border-t border-neutral-200 dark:border-white/5 transition-colors duration-300" style="content-visibility: auto">
+        <div class="max-w-5xl mx-auto px-6 md:px-12">
+            <div class="mb-16 md:mb-24">
+                <h2 class="text-sm md:text-base text-neutral-500 uppercase tracking-[0.2em] mb-4" data-i18n="dest_title">Prochaines Visions</h2>
+                <div class="h-px bg-neutral-300 dark:bg-neutral-800 w-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+            <!-- Typographic List Layout -->
+            <div class="flex flex-col">
                 <!-- NYC -->
-                <!-- Aspect ratio 2:3 preserved, object-cover used for card consistency (UI element) -->
-                <div class="relative group overflow-hidden aspect-[2/3] md:aspect-[3/4] cursor-default shadow-xl rounded-lg">
-                    <img alt="Photographie de rue noir et blanc New York City, 5 MPH sign, ambiance urbaine" class="w-full h-full object-cover animate-load opacity-0 opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.squarespace-cdn.com/content/v1/5424ba9ee4b0c69384ec83e1/1746648544203-MFD0NPE9CVLZ2E3ZN0Q1/5+MPH.jpg?format=1500w" loading="lazy" decoding="async" onload="this.classList.add('loaded')" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 md:bottom-10 md:left-10">
-                        <h3 class="text-3xl md:text-4xl font-serif text-white mb-2" data-i18n="dest_nyc">New York</h3>
-                        <p class="text-sm text-neutral-300 uppercase tracking-widest font-light" data-i18n="dest_nyc_desc">Verticalité & Chaos</p>
-                    </div>
-                    <div class="absolute top-8 right-8 md:top-10 md:right-10 border border-white/30 px-3 md:px-4 py-1 rounded-full backdrop-blur-md bg-black/20">
-                        <span class="text-[10px] uppercase tracking-widest text-white" data-i18n="dest_goal">Objectif</span>
+                <div class="group relative py-12 md:py-16 border-b border-neutral-300 dark:border-neutral-800 cursor-default">
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 z-10 relative">
+                        <h3 class="text-5xl md:text-8xl font-serif text-stroke text-transparent group-hover:text-black dark:group-hover:text-white transition-all duration-500" data-i18n="dest_nyc">New York</h3>
+                        <div class="flex items-center gap-4 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-sm uppercase tracking-widest text-neutral-600 dark:text-neutral-400" data-i18n="dest_nyc_desc">Verticalité & Chaos</span>
+                            <span class="material-symbols-outlined transform group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Japan -->
-                <div class="relative group overflow-hidden aspect-[2/3] md:aspect-[3/4] cursor-default shadow-xl rounded-lg">
-                    <img alt="Tokyo street photography, passage piéton sous la pluie, parapluies, ambiance néon" class="w-full h-full object-cover animate-load opacity-0 opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://live.staticflickr.com/3232/3076176097_418bfa0cd9_b.jpg" loading="lazy" decoding="async" onload="this.classList.add('loaded')" />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-8 left-8 md:bottom-10 md:left-10">
-                        <h3 class="text-3xl md:text-4xl font-serif text-white mb-2" data-i18n="dest_japan">Japon</h3>
-                        <p class="text-sm text-neutral-300 uppercase tracking-widest font-light" data-i18n="dest_japan_desc">Tradition & Néons</p>
-                    </div>
-                    <div class="absolute top-8 right-8 md:top-10 md:right-10 border border-white/30 px-3 md:px-4 py-1 rounded-full backdrop-blur-md bg-black/20">
-                        <span class="text-[10px] uppercase tracking-widest text-white" data-i18n="dest_goal">Objectif</span>
+                <div class="group relative py-12 md:py-16 border-b border-neutral-300 dark:border-neutral-800 cursor-default">
+                    <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 z-10 relative">
+                        <h3 class="text-5xl md:text-8xl font-serif text-stroke text-transparent group-hover:text-black dark:group-hover:text-white transition-all duration-500" data-i18n="dest_japan">Japon</h3>
+                        <div class="flex items-center gap-4 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
+                            <span class="text-sm uppercase tracking-widest text-neutral-600 dark:text-neutral-400" data-i18n="dest_japan_desc">Tradition & Néons</span>
+                            <span class="material-symbols-outlined transform group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -337,29 +345,34 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white dark:bg-black py-16 md:py-20 border-t border-neutral-200 dark:border-white/10 relative overflow-hidden transition-colors duration-300">
+    <footer id="contact" class="bg-white dark:bg-black py-24 md:py-32 border-t border-neutral-200 dark:border-white/10 relative overflow-hidden transition-colors duration-300">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] dark:opacity-5 pointer-events-none select-none">
             <h2 class="text-[5rem] md:text-[15rem] font-serif whitespace-nowrap text-black dark:text-white">ONYMOUSAN</h2>
         </div>
 
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl font-serif text-black dark:text-white mb-8" data-i18n="contact_title">Collaborons</h2>
-            <p class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-lg mx-auto font-light" data-i18n="contact_text">Disponible pour des projets photo à Paris ou pour accompagner un voyage à l'étranger.</p>
+            <h2 class="text-4xl md:text-5xl font-serif text-black dark:text-white mb-8" data-i18n="contact_title">Collaborons</h2>
+            <p class="text-neutral-600 dark:text-neutral-400 mb-12 max-w-lg mx-auto font-light text-lg" data-i18n="contact_text">Disponible pour des projets photo à Paris ou pour accompagner un voyage à l'étranger.</p>
 
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
-                <a href="#" onclick="openMailClient(event)" class="flex items-center gap-3 text-neutral-800 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors">
-                    <span class="material-symbols-outlined">mail</span>
-                    <span>a_michaux@outlook.com</span>
+            <div class="flex flex-col items-center gap-8 mb-16">
+                <!-- Enhanced CTA Button -->
+                <!-- Use a standard mailto link, updated dynamically via JS -->
+                <a id="email-btn" href="mailto:a_michaux@outlook.com" class="group relative px-10 py-5 overflow-hidden rounded-full bg-black dark:bg-white text-white dark:text-black transition-all duration-300 hover:shadow-2xl hover:scale-105">
+                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none"></div>
+                    <span class="relative flex items-center gap-3 font-medium uppercase tracking-widest text-sm">
+                        <span class="material-symbols-outlined">mail</span>
+                        <span data-i18n="btn_email">Démarrer un Projet</span>
+                    </span>
                 </a>
-                <span class="hidden md:block w-1 h-1 bg-black dark:bg-white rounded-full opacity-50"></span>
-                <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="flex items-center gap-3 text-neutral-800 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors" aria-label="Instagram">
-                    <span class="material-symbols-outlined">photo_camera</span>
+
+                <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="flex items-center gap-2 text-neutral-500 hover:text-black dark:hover:text-white transition-colors uppercase tracking-widest text-xs">
+                    <span class="material-symbols-outlined text-lg">photo_camera</span>
                     <span>@onymou.san</span>
                 </a>
             </div>
 
-            <div class="text-[10px] text-neutral-500 uppercase tracking-widest">
-                © 2023 Onymousan. <span data-i18n="rights">Tous droits réservés.</span>
+            <div class="text-[10px] text-neutral-400 uppercase tracking-widest border-t border-neutral-100 dark:border-white/5 pt-8 inline-block px-12">
+                © 2026 Onymousan. <span data-i18n="rights">Tous droits réservés.</span>
             </div>
         </div>
     </footer>
@@ -396,48 +409,24 @@
         </div>
     </div>
 
-    <!-- Code Source Modal -->
-    <div class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300" id="code-modal" role="dialog" aria-modal="true">
-        <div class="bg-white dark:bg-neutral-900 w-full max-w-4xl rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] transform scale-95 transition-transform duration-300">
-            <div class="p-4 border-b border-neutral-200 dark:border-neutral-800 flex justify-between items-center bg-neutral-50 dark:bg-black/50">
-                <h3 class="text-lg font-bold text-black dark:text-white font-serif" data-i18n="code_title">Code Source Complet</h3>
-                <button class="p-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-full transition-colors" onclick="closeCodeModal()" aria-label="Fermer">
-                    <span class="material-symbols-outlined">close</span>
-                </button>
-            </div>
-            <div class="flex-1 overflow-auto bg-neutral-100 dark:bg-black p-4">
-                <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap break-all p-4 rounded bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800"><code id="source-code-display"></code></pre>
-            </div>
-            <div class="p-4 border-t border-neutral-200 dark:border-neutral-800 flex justify-end gap-3 bg-neutral-50 dark:bg-black/50">
-                <button class="px-4 py-2 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white font-medium text-sm" onclick="closeCodeModal()">
-                    Fermer
-                </button>
-                <button class="px-5 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium flex items-center gap-2 hover:opacity-80 transition-opacity text-sm uppercase tracking-wider" onclick="copyCode()">
-                    <span class="material-symbols-outlined text-sm">content_copy</span>
-                    <span data-i18n="btn_copy">Copier le Code</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
     <script>
         // --- DATA ---
         const translations = {
             fr: {
                 nav_gallery: "Portfolio",
                 nav_about: "À Propos",
-                nav_destinations: "Futurs Voyages",
+                nav_destinations: "Voyages",
+                nav_contact: "Contact",
                 hero_subtitle: "Paris • Photographie",
                 hero_desc: "Capturer l'énergie de la ville. De Paris vers le Monde.",
                 btn_gallery: "Découvrir la Galerie",
-                about_title: "Dynamique & Urbain",
-                about_text: "Je vis à <strong class='text-black dark:text-white font-normal'>Paris</strong>, au cœur du mouvement. Mon travail se nourrit de l'énergie brute de la rue et des instants fugaces. Mais mon objectif ne s'arrête pas au périphérique : je suis un photographe tourné vers l'ailleurs, avec l'ambition de confronter mon regard aux gratte-ciels de <strong class='text-black dark:text-white font-normal'>New York</strong> et aux néons du <strong class='text-black dark:text-white font-normal'>Japon</strong>.",
+                about_title: "La Rigueur & L'Instinct",
+                about_text: "Ingénieur de formation, mon esprit a été façonné par la rigueur et la logique. La photographie est mon échappatoire, une quête instinctive du <strong>chaos organique</strong> qui régit la rue. C'est dans cette tension que je trouve mon équilibre. Comme l'évoquait Camus face à l'Absurde, il s'agit de voir le monde tel qu'il est, sans illusion mais avec passion. Photographier, c'est peut-être simplement <strong>imaginer Sisyphe heureux</strong> au milieu du tumulte urbain.",
                 tag_street: "Street Photography",
                 tag_bw: "Noir & Blanc",
                 tag_travel: "Voyage",
                 gallery_title: "Highlights",
                 gallery_subtitle: "Sélection Parisienne",
-                link_pexels: "Voir tout sur Pexels",
                 dest_title: "Prochaines Visions",
                 dest_nyc: "New York",
                 dest_nyc_desc: "Verticalité & Chaos",
@@ -446,28 +435,26 @@
                 dest_goal: "Objectif",
                 contact_title: "Collaborons",
                 contact_text: "Disponible pour des projets photo à Paris ou pour accompagner un voyage à l'étranger.",
+                btn_email: "Démarrer un Projet",
                 rights: "Tous droits réservés.",
-                code_title: "Code Source Complet",
-                btn_copy: "Copier le Code",
-                alert_copied: "Code copié dans le presse-papier !",
                 mail_subject: "Proposition de collaboration / Projet photo",
                 mail_body: "Bonjour Onymousan,\n\nJe souhaiterais discuter d'un projet de photographie avec vous...\n\nCordialement,"
             },
             en: {
                 nav_gallery: "Portfolio",
                 nav_about: "About",
-                nav_destinations: "Future Travels",
+                nav_destinations: "Travels",
+                nav_contact: "Contact",
                 hero_subtitle: "Paris • Photography",
                 hero_desc: "Capturing the city's energy. From Paris to the World.",
                 btn_gallery: "Discover Gallery",
-                about_title: "Dynamic & Urban",
-                about_text: "I live in <strong class='text-black dark:text-white font-normal'>Paris</strong>, at the heart of the movement. My work feeds on the raw energy of the street and fleeting moments. But my lens doesn't stop at the ring road: I am a photographer looking outwards, with the ambition to confront my gaze with the skyscrapers of <strong class='text-black dark:text-white font-normal'>New York</strong> and the neons of <strong class='text-black dark:text-white font-normal'>Japan</strong>.",
+                about_title: "Rigor & Instinct",
+                about_text: "Trained as an engineer, my mind was shaped by rigor and logic. Photography is my escape, an instinctive quest for the <strong>organic chaos</strong> that rules the street. It is in this tension that I find my balance. Like Camus facing the Absurd, it is about seeing the world as it is, without illusion but with passion. To photograph is perhaps simply to <strong>imagine Sisyphus happy</strong> amidst the urban tumult.",
                 tag_street: "Street Photography",
                 tag_bw: "Black & White",
                 tag_travel: "Travel",
                 gallery_title: "Highlights",
                 gallery_subtitle: "Parisian Selection",
-                link_pexels: "See all on Pexels",
                 dest_title: "Next Visions",
                 dest_nyc: "New York",
                 dest_nyc_desc: "Verticality & Chaos",
@@ -476,10 +463,8 @@
                 dest_goal: "Goal",
                 contact_title: "Let's Collaborate",
                 contact_text: "Available for photo projects in Paris or to accompany a trip abroad.",
+                btn_email: "Start a Project",
                 rights: "All rights reserved.",
-                code_title: "Full Source Code",
-                btn_copy: "Copy Code",
-                alert_copied: "Code copied to clipboard!",
                 mail_subject: "Collaboration Proposal / Photo Project",
                 mail_body: "Hi Onymousan,\n\nI would like to discuss a photography project with you...\n\nBest regards,"
             }
@@ -599,6 +584,7 @@
             applyTheme(currentTheme);
             renderGallery();
             updateLanguageUI();
+            updateMailButton(); // Set initial mail link
             
             // Nav links smooth scroll
             document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
@@ -695,6 +681,7 @@
         function toggleLang() {
             currentLang = currentLang === 'fr' ? 'en' : 'fr';
             updateLanguageUI();
+            updateMailButton(); // Update mail link when language changes
             renderGallery(); // Re-render gallery to translate titles and alt text
         }
 
@@ -710,6 +697,15 @@
                     }
                 }
             });
+        }
+
+        function updateMailButton() {
+            const recipient = "a_michaux@outlook.com";
+            const subject = translations[currentLang].mail_subject;
+            const body = translations[currentLang].mail_body;
+            // Create proper mailto link
+            const link = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            document.getElementById('email-btn').href = link;
         }
 
         // --- MOBILE MENU ---
@@ -827,76 +823,6 @@
                 lightboxImg.style.opacity = '1';
                 loader.style.display = 'none';
             };
-        }
-
-        // --- MAILTO FUNCTIONALITY ---
-        function openMailClient(e) {
-            e.preventDefault();
-            const recipient = "a_michaux@outlook.com";
-            const subject = translations[currentLang].mail_subject;
-            const body = translations[currentLang].mail_body;
-            
-            // Construct mailto link with encoded parameters
-            const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            
-            // Trigger navigation
-            window.location.href = mailtoLink;
-        }
-
-        // --- CODE MODAL ---
-        const codeModal = document.getElementById('code-modal');
-        const codeDisplay = document.getElementById('source-code-display');
-
-        function openCodeModal() {
-            const fullHtml = document.documentElement.outerHTML;
-            codeDisplay.textContent = fullHtml;
-            codeModal.classList.remove('hidden');
-            setTimeout(() => {
-                codeModal.classList.remove('opacity-0');
-                codeModal.firstElementChild.classList.remove('scale-95');
-                codeModal.firstElementChild.classList.add('scale-100');
-            }, 10);
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeCodeModal() {
-            codeModal.classList.add('opacity-0');
-            codeModal.firstElementChild.classList.add('scale-95');
-            codeModal.firstElementChild.classList.remove('scale-100');
-            setTimeout(() => {
-                codeModal.classList.add('hidden');
-            }, 300);
-            document.body.style.overflow = 'auto';
-        }
-
-        function copyCode() {
-            const codeText = document.documentElement.outerHTML;
-            if (navigator.clipboard && navigator.clipboard.writeText) {
-                navigator.clipboard.writeText(codeText).then(() => showCopySuccess()).catch(err => fallbackCopyCode(codeText));
-            } else {
-                fallbackCopyCode(codeText);
-            }
-        }
-
-        function fallbackCopyCode(text) {
-            const textArea = document.createElement("textarea");
-            textArea.value = text;
-            textArea.style.position = "fixed";
-            textArea.style.left = "-9999px";
-            document.body.appendChild(textArea);
-            textArea.focus();
-            textArea.select();
-            try {
-                document.execCommand('copy') ? showCopySuccess() : alert("Erreur copie.");
-            } catch (err) {
-                alert("Erreur copie.");
-            }
-            document.body.removeChild(textArea);
-        }
-
-        function showCopySuccess() {
-            const msg = translations[currentLang].alert_copied;
-            alert(msg);
         }
 
         // Run init

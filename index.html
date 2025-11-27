@@ -152,10 +152,10 @@
         opacity: 1;
       }
       .gallery-item img {
-        transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       }
       .gallery-item:hover img {
-        transform: scale(1.03);
+        transform: scale(1.02);
       }
       
       /* Smooth Image Loading */
@@ -259,10 +259,10 @@
     </header>
 
     <!-- Gallery -->
-    <main id="gallery" class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-white dark:bg-black transition-colors duration-300">
-        <div class="flex justify-between items-end mb-16 border-b border-neutral-200 dark:border-white/10 pb-6">
+    <main id="gallery" class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 py-24 bg-white dark:bg-black transition-colors duration-300" style="content-visibility: auto">
+        <div class="flex justify-between items-end mb-20 border-b border-neutral-200 dark:border-white/10 pb-6">
             <div>
-                <h2 class="text-4xl md:text-5xl font-serif text-black dark:text-white" data-i18n="gallery_title">Highlights</h2>
+                <h2 class="text-4xl md:text-6xl font-serif text-black dark:text-white" data-i18n="gallery_title">Highlights</h2>
                 <p class="text-neutral-500 text-xs md:text-sm mt-3 uppercase tracking-[0.2em]" data-i18n="gallery_subtitle">Sélection Parisienne</p>
             </div>
             <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" aria-label="Voir le profil Pexels">
@@ -271,14 +271,15 @@
             </a>
         </div>
 
-        <!-- Masonry Grid (Columns) Layout -->
-        <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+        <!-- Editorial Grid Layout (12 Columns) -->
+        <!-- items-center ensures no stretching/cropping, gap-y-12 provides elegant spacing -->
+        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-12 gap-y-16 gap-x-8 items-center">
             <!-- Gallery items will be injected here by JS -->
         </div>
     </main>
 
     <!-- About -->
-    <section id="about" class="py-32 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300">
+    <section id="about" class="py-32 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300" style="content-visibility: auto">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <div class="flex justify-center mb-8">
                 <span class="material-symbols-outlined text-5xl text-neutral-400 font-light">shutter_speed</span>
@@ -296,7 +297,7 @@
     </section>
 
     <!-- Destinations -->
-    <section id="destinations" class="py-32 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-white/5 transition-colors duration-300">
+    <section id="destinations" class="py-32 bg-neutral-100 dark:bg-neutral-900 border-t border-neutral-200 dark:border-white/5 transition-colors duration-300" style="content-visibility: auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-20">
                 <h2 class="text-4xl font-serif text-black dark:text-white mb-4" data-i18n="dest_title">Prochaines Visions</h2>
@@ -305,7 +306,8 @@
 
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- NYC -->
-                <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl rounded-lg">
+                <!-- Aspect ratio 2:3 preserved, object-cover used for card consistency (UI element) -->
+                <div class="relative group overflow-hidden aspect-[2/3] md:aspect-[3/4] cursor-default shadow-xl rounded-lg">
                     <img alt="Photographie de rue noir et blanc New York City, 5 MPH sign, ambiance urbaine" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.squarespace-cdn.com/content/v1/5424ba9ee4b0c69384ec83e1/1746648544203-MFD0NPE9CVLZ2E3ZN0Q1/5+MPH.jpg?format=1500w" loading="lazy" decoding="async" onload="this.classList.add('loaded')" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-10 left-10">
@@ -318,7 +320,7 @@
                 </div>
 
                 <!-- Japan -->
-                <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl rounded-lg">
+                <div class="relative group overflow-hidden aspect-[2/3] md:aspect-[3/4] cursor-default shadow-xl rounded-lg">
                     <img alt="Tokyo street photography, passage piéton sous la pluie, parapluies, ambiance néon" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://live.staticflickr.com/3232/3076176097_418bfa0cd9_b.jpg" loading="lazy" decoding="async" onload="this.classList.add('loaded')" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-10 left-10">
@@ -344,7 +346,7 @@
             <p class="text-neutral-600 dark:text-neutral-400 mb-10 max-w-lg mx-auto font-light" data-i18n="contact_text">Disponible pour des projets photo à Paris ou pour accompagner un voyage à l'étranger.</p>
 
             <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-12">
-                <a href="mailto:a_michaux@outlook.com" class="flex items-center gap-3 text-neutral-800 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors">
+                <a href="#" onclick="openMailClient(event)" class="flex items-center gap-3 text-neutral-800 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors">
                     <span class="material-symbols-outlined">mail</span>
                     <span>a_michaux@outlook.com</span>
                 </a>
@@ -439,7 +441,9 @@
                 rights: "Tous droits réservés.",
                 code_title: "Code Source Complet",
                 btn_copy: "Copier le Code",
-                alert_copied: "Code copié dans le presse-papier !"
+                alert_copied: "Code copié dans le presse-papier !",
+                mail_subject: "Proposition de collaboration / Projet photo",
+                mail_body: "Bonjour Onymousan,\n\nJe souhaiterais discuter d'un projet de photographie avec vous...\n\nCordialement,"
             },
             en: {
                 nav_gallery: "Portfolio",
@@ -467,7 +471,9 @@
                 rights: "All rights reserved.",
                 code_title: "Full Source Code",
                 btn_copy: "Copy Code",
-                alert_copied: "Code copied to clipboard!"
+                alert_copied: "Code copied to clipboard!",
+                mail_subject: "Collaboration Proposal / Photo Project",
+                mail_body: "Hi Onymousan,\n\nI would like to discuss a photography project with you...\n\nBest regards,"
             }
         };
 
@@ -478,6 +484,7 @@
                 src: "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Carrefour", en: "Intersection" },
                 subtitle: { fr: "Flux & Architecture", en: "Flow & Architecture" },
+                className: "col-span-12 md:col-span-7", // Wide main focus
                 altText: { 
                     fr: "Grand carrefour parisien ensoleillé avec immeuble haussmannien et couple sur scooter vert, ambiance urbaine dynamique.", 
                     en: "Sunny Parisian intersection with Haussmann building and couple on green scooter, dynamic urban atmosphere." 
@@ -488,6 +495,7 @@
                 src: "https://images.pexels.com/photos/34951415/pexels-photo-34951415.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Rue La Fontaine", en: "Rue La Fontaine" },
                 subtitle: { fr: "Générations", en: "Generations" },
+                className: "col-span-12 md:col-span-5", // Counterpart to Img 1
                 altText: {
                     fr: "Scène de rue Paris 16e, rue Jean de La Fontaine, contraste de générations entre jeunes en maillot de foot et homme âgé.",
                     en: "Street scene in Paris 16th, Rue Jean de La Fontaine, generational contrast between youths in soccer jersey and older man."
@@ -498,6 +506,7 @@
                 src: "https://images.pexels.com/photos/34951324/pexels-photo-34951324.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "38 Saint Louis", en: "38 Saint Louis" },
                 subtitle: { fr: "Le Lecteur", en: "The Reader" },
+                className: "col-span-12 md:col-span-5", // Intimate portrait
                 altText: {
                     fr: "Homme lisant paisiblement en terrasse d'un vieux café parisien rue Saint Louis, devant une façade authentique.",
                     en: "Man reading peacefully on the terrace of an old Parisian cafe on Rue Saint Louis, in front of an authentic facade."
@@ -508,6 +517,7 @@
                 src: "https://images.pexels.com/photos/34951307/pexels-photo-34951307.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Conversation", en: "Conversation" },
                 subtitle: { fr: "Groupe Urbain", en: "Urban Group" },
+                className: "col-span-12 md:col-span-7", // Wide group shot
                 altText: {
                     fr: "Trois personnes âgées discutant sur le trottoir devant une vitrine moderne Fursac, contraste social et urbain.",
                     en: "Three elderly people chatting on the sidewalk in front of a modern Fursac window display, social and urban contrast."
@@ -518,6 +528,7 @@
                 src: "https://images.pexels.com/photos/34951209/pexels-photo-34951209.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Costes", en: "Costes" },
                 subtitle: { fr: "Intemporel", en: "Timeless" },
+                className: "col-span-12", // Cinematic Full Width
                 altText: {
                     fr: "Photographie noir et blanc de la façade à arcades du restaurant Costes avec une voiture ancienne, ambiance intemporelle.",
                     en: "Black and white photography of the Costes restaurant arcade facade with a vintage car, timeless atmosphere."
@@ -528,6 +539,7 @@
                 src: "https://images.pexels.com/photos/34951408/pexels-photo-34951408.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Nocturne", en: "Nocturne" },
                 subtitle: { fr: "Solitude", en: "Solitude" },
+                className: "col-span-12 md:col-span-6", // Half width
                 altText: {
                     fr: "Vue de nuit cinématographique d'une laverie parisienne éclairée avec une personne seule à l'intérieur.",
                     en: "Cinematic night view of a lit Parisian laundromat with a lone person inside."
@@ -538,6 +550,7 @@
                 src: "https://images.pexels.com/photos/34951198/pexels-photo-34951198.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "L'Ouvrier", en: "The Worker" },
                 subtitle: { fr: "Hauteur", en: "Heights" },
+                className: "col-span-12 md:col-span-6", // Half width
                 altText: {
                     fr: "Ouvrier sur une échelle travaillant sur une façade haussmannienne classique, photo noir et blanc en contre-plongée.",
                     en: "Worker on a ladder working on a classic Haussmann facade, low angle black and white photo."
@@ -548,6 +561,7 @@
                 src: "https://images.pexels.com/photos/34951146/pexels-photo-34951146.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Lifestyle", en: "Lifestyle" },
                 subtitle: { fr: "Contemplation", en: "Contemplation" },
+                className: "col-span-12 md:col-span-10 md:col-start-2", // Centered Large
                 altText: {
                     fr: "Personne âgée regardant une vitrine Polo & Argentina Lifestyle, jeu de reflets urbains en noir et blanc.",
                     en: "Elderly person looking at a Polo & Argentina Lifestyle window display, urban reflection play in black and white."
@@ -684,16 +698,16 @@
         function renderGallery() {
             const grid = document.getElementById('gallery-grid');
             
-            // Masonry Layout: Simply mapping images without predefined row/col spans.
-            // Tailwind 'columns' utility handles the distribution.
+            // Asymmetrical Editorial Layout: Using CSS Grid with custom spans defined in data
+            // Removed object-cover to ensure natural aspect ratio and zero cropping
             grid.innerHTML = galleryImages.map((img, index) => {
                 const altText = img.altText[currentLang] || img.title[currentLang];
                 
                 return `
-                <div class="gallery-item break-inside-avoid mb-6 relative group overflow-hidden cursor-pointer w-full rounded-sm" onclick="openLightbox(${index})">
+                <div class="${img.className} gallery-item relative group overflow-hidden cursor-pointer w-full rounded-sm" onclick="openLightbox(${index})">
                     <img 
                         alt="${altText}" 
-                        class="w-full h-auto object-cover block will-change-transform" 
+                        class="w-full h-auto block will-change-transform shadow-sm dark:shadow-none" 
                         src="${img.src}" 
                         loading="lazy"
                         decoding="async"
@@ -759,6 +773,20 @@
             lightboxImg.alt = img.altText[currentLang];
             lightboxTitle.textContent = img.title[currentLang];
             lightboxSubtitle.textContent = img.subtitle[currentLang];
+        }
+
+        // --- MAILTO FUNCTIONALITY ---
+        function openMailClient(e) {
+            e.preventDefault();
+            const recipient = "a_michaux@outlook.com";
+            const subject = translations[currentLang].mail_subject;
+            const body = translations[currentLang].mail_body;
+            
+            // Construct mailto link with encoded parameters
+            const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Trigger navigation
+            window.location.href = mailtoLink;
         }
 
         // --- CODE MODAL ---

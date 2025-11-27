@@ -22,7 +22,7 @@
       "name": "Onymousan",
       "url": "https://onymou.san/",
       "jobTitle": "Photographe Urbain",
-      "image": "https://images.pexels.com/photos/33953563/pexels-photo-33953563.jpeg",
+      "image": "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg",
       "sameAs": [
         "https://www.instagram.com/onymou.san/",
         "https://www.pexels.com/fr-fr/@amaurymic/highlights/"
@@ -41,14 +41,14 @@
     <meta property="og:url" content="https://onymou.san/" />
     <meta property="og:title" content="Onymousan | Photography" />
     <meta property="og:description" content="Capturer l'énergie de la ville. De Paris vers le Monde." />
-    <meta property="og:image" content="https://images.pexels.com/photos/33953563/pexels-photo-33953563.jpeg" />
+    <meta property="og:image" content="https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://onymou.san/" />
     <meta property="twitter:title" content="Onymousan | Photography" />
     <meta property="twitter:description" content="Capturer l'énergie de la ville. De Paris vers le Monde." />
-    <meta property="twitter:image" content="https://images.pexels.com/photos/33953563/pexels-photo-33953563.jpeg" />
+    <meta property="twitter:image" content="https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg" />
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -196,7 +196,8 @@
     <!-- Hero -->
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img alt="Hero Background" class="w-full h-full object-cover opacity-80 dark:opacity-60 transition-opacity duration-500" src="https://images.pexels.com/photos/33953579/pexels-photo-33953579.jpeg" loading="eager" fetchpriority="high" />
+            <!-- Hero Image: Passerelle en bois (Image 34951205) -->
+            <img id="hero-bg" alt="Passerelle Parisienne" class="w-full h-full object-cover opacity-80 dark:opacity-60 transition-opacity duration-500 will-change-transform" src="https://images.pexels.com/photos/34951205/pexels-photo-34951205.jpeg" loading="eager" fetchpriority="high" />
             <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white dark:from-black/70 dark:via-black/40 dark:to-black transition-colors duration-500"></div>
         </div>
 
@@ -263,7 +264,7 @@
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- NYC -->
                 <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl">
-                    <img alt="New York" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://picsum.photos/seed/nyc/1000/1000" loading="lazy" />
+                    <img alt="New York" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.squarespace-cdn.com/content/v1/5424ba9ee4b0c69384ec83e1/1746648544203-MFD0NPE9CVLZ2E3ZN0Q1/5+MPH.jpg?format=1500w" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-10 left-10">
                         <h3 class="text-4xl font-serif text-white mb-2" data-i18n="dest_nyc">New York</h3>
@@ -276,7 +277,7 @@
 
                 <!-- Japan -->
                 <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl">
-                    <img alt="Japan" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://picsum.photos/seed/tokyo/1000/1000" loading="lazy" />
+                    <img alt="Japan" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://live.staticflickr.com/3232/3076176097_418bfa0cd9_b.jpg" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-10 left-10">
                         <h3 class="text-4xl font-serif text-white mb-2" data-i18n="dest_japan">Japon</h3>
@@ -343,6 +344,30 @@
         </div>
     </div>
 
+    <!-- Code Source Modal -->
+    <div class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300" id="code-modal">
+        <div class="bg-white dark:bg-neutral-900 w-full max-w-4xl rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] transform scale-95 transition-transform duration-300">
+            <div class="p-4 border-b border-neutral-200 dark:border-neutral-800 flex justify-between items-center bg-neutral-50 dark:bg-black/50">
+                <h3 class="text-lg font-bold text-black dark:text-white font-serif" data-i18n="code_title">Code Source Complet</h3>
+                <button class="p-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-full transition-colors" onclick="closeCodeModal()">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="flex-1 overflow-auto bg-neutral-100 dark:bg-black p-4">
+                <pre class="text-xs font-mono text-neutral-700 dark:text-neutral-300 whitespace-pre-wrap break-all p-4 rounded bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800"><code id="source-code-display"></code></pre>
+            </div>
+            <div class="p-4 border-t border-neutral-200 dark:border-neutral-800 flex justify-end gap-3 bg-neutral-50 dark:bg-black/50">
+                <button class="px-4 py-2 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white font-medium text-sm" onclick="closeCodeModal()">
+                    Fermer
+                </button>
+                <button class="px-5 py-2 bg-black dark:bg-white text-white dark:text-black rounded-lg font-medium flex items-center gap-2 hover:opacity-80 transition-opacity text-sm uppercase tracking-wider" onclick="copyCode()">
+                    <span class="material-symbols-outlined text-sm">content_copy</span>
+                    <span data-i18n="btn_copy">Copier le Code</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script>
         // --- DATA ---
         const translations = {
@@ -369,7 +394,10 @@
                 dest_goal: "Objectif",
                 contact_title: "Collaborons",
                 contact_text: "Disponible pour des projets photo à Paris ou pour accompagner un voyage à l'étranger.",
-                rights: "Tous droits réservés."
+                rights: "Tous droits réservés.",
+                code_title: "Code Source Complet",
+                btn_copy: "Copier le Code",
+                alert_copied: "Code copié dans le presse-papier !"
             },
             en: {
                 nav_gallery: "Portfolio",
@@ -394,59 +422,69 @@
                 dest_goal: "Goal",
                 contact_title: "Let's Collaborate",
                 contact_text: "Available for photo projects in Paris or to accompany a trip abroad.",
-                rights: "All rights reserved."
+                rights: "All rights reserved.",
+                code_title: "Full Source Code",
+                btn_copy: "Copy Code",
+                alert_copied: "Code copied to clipboard!"
             }
         };
 
         const galleryImages = [
             {
                 id: 1,
-                src: "https://images.pexels.com/photos/33953563/pexels-photo-33953563.jpeg",
-                title: { fr: "Lumière d'Hiver", en: "Winter Light" },
-                subtitle: { fr: "Paris • Atmosphère", en: "Paris • Atmosphere" },
+                src: "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg",
+                title: { fr: "Carrefour", en: "Intersection" },
+                subtitle: { fr: "Flux & Architecture", en: "Flow & Architecture" },
                 aspectRatio: 'portrait'
             },
             {
                 id: 2,
-                src: "https://images.pexels.com/photos/33953580/pexels-photo-33953580.jpeg",
-                title: { fr: "Géométrie", en: "Geometry" },
-                subtitle: { fr: "Architecture Urbaine", en: "Urban Architecture" },
+                src: "https://images.pexels.com/photos/34951415/pexels-photo-34951415.jpeg",
+                title: { fr: "Rue La Fontaine", en: "Rue La Fontaine" },
+                subtitle: { fr: "Générations", en: "Generations" },
                 aspectRatio: 'landscape'
             },
             {
                 id: 3,
-                src: "https://images.pexels.com/photos/33953557/pexels-photo-33953557.jpeg",
-                title: { fr: "Scène de Rue", en: "Street Scene" },
-                subtitle: { fr: "L'Instant", en: "The Moment" },
+                src: "https://images.pexels.com/photos/34951324/pexels-photo-34951324.jpeg",
+                title: { fr: "38 Saint Louis", en: "38 Saint Louis" },
+                subtitle: { fr: "Le Lecteur", en: "The Reader" },
                 aspectRatio: 'portrait'
             },
             {
                 id: 4,
-                src: "https://images.pexels.com/photos/32763745/pexels-photo-32763745.jpeg",
-                title: { fr: "Mouvement", en: "Motion" },
-                subtitle: { fr: "Vie Urbaine", en: "Urban Life" },
+                src: "https://images.pexels.com/photos/34951307/pexels-photo-34951307.jpeg",
+                title: { fr: "Conversation", en: "Conversation" },
+                subtitle: { fr: "Groupe Urbain", en: "Urban Group" },
                 aspectRatio: 'portrait'
             },
             {
                 id: 5,
-                src: "https://images.pexels.com/photos/33953579/pexels-photo-33953579.jpeg",
-                title: { fr: "Perspective", en: "Perspective" },
-                subtitle: { fr: "Profondeur", en: "Depth" },
-                aspectRatio: 'square'
+                src: "https://images.pexels.com/photos/34951209/pexels-photo-34951209.jpeg",
+                title: { fr: "Costes", en: "Costes" },
+                subtitle: { fr: "Intemporel", en: "Timeless" },
+                aspectRatio: 'landscape'
             },
             {
                 id: 6,
-                src: "https://images.pexels.com/photos/33953580/pexels-photo-33953580.jpeg",
-                title: { fr: "Reflets", en: "Reflections" },
-                subtitle: { fr: "Transparence", en: "Transparency" },
-                aspectRatio: 'panorama'
+                src: "https://images.pexels.com/photos/34951408/pexels-photo-34951408.jpeg",
+                title: { fr: "Nocturne", en: "Nocturne" },
+                subtitle: { fr: "Solitude", en: "Solitude" },
+                aspectRatio: 'landscape'
             },
             {
                 id: 7,
-                src: "https://images.pexels.com/photos/33953557/pexels-photo-33953557.jpeg",
-                title: { fr: "Quotidien", en: "Daily Life" },
-                subtitle: { fr: "Passants", en: "Passers-by" },
-                aspectRatio: 'square'
+                src: "https://images.pexels.com/photos/34951198/pexels-photo-34951198.jpeg",
+                title: { fr: "L'Ouvrier", en: "The Worker" },
+                subtitle: { fr: "Hauteur", en: "Heights" },
+                aspectRatio: 'portrait'
+            },
+            {
+                id: 8,
+                src: "https://images.pexels.com/photos/34951146/pexels-photo-34951146.jpeg",
+                title: { fr: "Lifestyle", en: "Lifestyle" },
+                subtitle: { fr: "Contemplation", en: "Contemplation" },
+                aspectRatio: 'landscape'
             }
         ];
 
@@ -481,6 +519,16 @@
                     nav.classList.add('glass-nav');
                 } else {
                     nav.classList.remove('glass-nav');
+                }
+            });
+
+            // Parallax Effect for Hero Background
+            window.addEventListener('scroll', () => {
+                const heroBg = document.getElementById('hero-bg');
+                if (heroBg) {
+                    const scrollPosition = window.pageYOffset;
+                    // Move background down at 50% of scroll speed for depth
+                    heroBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
                 }
             });
 
@@ -560,15 +608,16 @@
         function renderGallery() {
             const grid = document.getElementById('gallery-grid');
             
-            // Layout configuration for 7 items to create an asymmetrical/editorial look
+            // Layout configuration for 8 items to create an asymmetrical/editorial look
             const gridClasses = [
-                'md:col-span-6 md:row-span-2', // Item 1: Large Portrait Left
-                'md:col-span-6 md:row-span-1', // Item 2: Half Landscape Top Right
-                'md:col-span-3 md:row-span-1', // Item 3: Small Portrait
-                'md:col-span-3 md:row-span-1', // Item 4: Small Portrait
-                'md:col-span-4 md:row-span-1', // Item 5: Mid Square
-                'md:col-span-8 md:row-span-1', // Item 6: Wide Landscape
-                'md:col-span-4 md:row-span-1', // Item 7: Standard
+                'md:col-span-6 md:row-span-2', // Item 1: Large Vertical (Scooter)
+                'md:col-span-6 md:row-span-1', // Item 2: Landscape Top Right (Jean de la Fontaine)
+                'md:col-span-3 md:row-span-1', // Item 3: Small Portrait (Reader)
+                'md:col-span-3 md:row-span-1', // Item 4: Small Portrait (Fursac)
+                'md:col-span-8 md:row-span-1', // Item 5: Wide Landscape (Costes)
+                'md:col-span-4 md:row-span-1', // Item 6: Landscape (Laverie)
+                'md:col-span-4 md:row-span-1', // Item 7: Vertical (Ladder)
+                'md:col-span-8 md:row-span-1', // Item 8: Landscape (Window)
             ];
 
             grid.innerHTML = galleryImages.map((img, index) => {
@@ -582,6 +631,7 @@
                         class="w-full h-full object-cover transition-transform duration-1000 ease-out" 
                         src="${img.src}" 
                         loading="lazy"
+                        decoding="async"
                     />
                     <div class="gallery-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-4">
                         <span class="font-serif text-2xl md:text-3xl text-white italic translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
@@ -641,6 +691,62 @@
             lightboxImg.src = img.src;
             lightboxTitle.textContent = img.title[currentLang];
             lightboxSubtitle.textContent = img.subtitle[currentLang];
+        }
+
+        // --- CODE MODAL ---
+        const codeModal = document.getElementById('code-modal');
+        const codeDisplay = document.getElementById('source-code-display');
+
+        function openCodeModal() {
+            const fullHtml = document.documentElement.outerHTML;
+            codeDisplay.textContent = fullHtml;
+            codeModal.classList.remove('hidden');
+            setTimeout(() => {
+                codeModal.classList.remove('opacity-0');
+                codeModal.firstElementChild.classList.remove('scale-95');
+                codeModal.firstElementChild.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCodeModal() {
+            codeModal.classList.add('opacity-0');
+            codeModal.firstElementChild.classList.add('scale-95');
+            codeModal.firstElementChild.classList.remove('scale-100');
+            setTimeout(() => {
+                codeModal.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = 'auto';
+        }
+
+        function copyCode() {
+            const codeText = document.documentElement.outerHTML;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(codeText).then(() => showCopySuccess()).catch(err => fallbackCopyCode(codeText));
+            } else {
+                fallbackCopyCode(codeText);
+            }
+        }
+
+        function fallbackCopyCode(text) {
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "fixed";
+            textArea.style.left = "-9999px";
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy') ? showCopySuccess() : alert("Erreur copie.");
+            } catch (err) {
+                alert("Erreur copie.");
+            }
+            document.body.removeChild(textArea);
+        }
+
+        function showCopySuccess() {
+            const msg = translations[currentLang].alert_copied;
+            alert(msg);
         }
 
         // Run init

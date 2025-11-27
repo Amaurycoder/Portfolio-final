@@ -3,52 +3,82 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Onymousan | Photography</title>
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://onymou.san/" />
+    
+    <title>Onymousan | Photographe Street Photography Paris</title>
     
     <!-- Favicon (Camera Icon) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22black%22><path d=%22M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z%22 opacity=%220%22/><path d=%22M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z%22/></svg>" type="image/svg+xml">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Portfolio de photographie urbaine et street photography à Paris par Onymousan. Découvrez une vision dynamique et élégante de la capitale, du noir et blanc à la couleur." />
-    <meta name="keywords" content="photographie, paris, street photography, urbain, noir et blanc, portfolio, onymousan, art, voyage, japon, new york" />
+    <meta name="description" content="Portfolio de Onymousan, photographe de rue à Paris. Une exploration visuelle de la capitale, capturant l'instant décisif, l'architecture haussmannienne et la vie urbaine en noir et blanc et couleur." />
+    <meta name="keywords" content="photographe paris, street photography paris, photo rue noir et blanc, onymou.san, art urbain, photographe voyage, japon, new york, portfolio photo" />
     <meta name="author" content="Onymousan" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Structured Data (JSON-LD) for GEO -->
+    <!-- Performance Optimizations -->
+    <link rel="preconnect" href="https://images.pexels.com">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Structured Data (JSON-LD) for GEO & SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Onymousan",
-      "url": "https://onymou.san/",
-      "jobTitle": "Photographe Urbain",
-      "image": "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg",
-      "sameAs": [
-        "https://www.instagram.com/onymou.san/",
-        "https://www.pexels.com/fr-fr/@amaurymic/highlights/"
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris",
-        "addressCountry": "FR"
-      },
-      "description": "Photographe spécialisé dans la street photography et l'exploration urbaine à Paris, capturant l'énergie de la ville en noir et blanc et en couleur."
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://onymou.san/#person",
+          "name": "Onymousan",
+          "url": "https://onymou.san/",
+          "jobTitle": "Photographe de Rue",
+          "image": "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg?auto=compress&cs=tinysrgb&w=1200",
+          "sameAs": [
+            "https://www.instagram.com/onymou.san/",
+            "https://www.pexels.com/fr-fr/@amaurymic/highlights/"
+          ],
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Paris",
+            "addressCountry": "FR"
+          },
+          "description": "Photographe spécialisé dans la street photography et l'exploration urbaine à Paris."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://onymou.san/#website",
+          "url": "https://onymou.san/",
+          "name": "Onymousan Photography",
+          "author": { "@id": "https://onymou.san/#person" },
+          "description": "Portfolio de photographie urbaine : Paris, New York, Japon.",
+          "inLanguage": "fr-FR"
+        },
+        {
+          "@type": "ImageGallery",
+          "name": "Portfolio Street Photography Paris",
+          "author": { "@id": "https://onymou.san/#person" },
+          "description": "Sélection de photographies de rue capturant l'atmosphère parisienne.",
+          "provider": { "@id": "https://onymou.san/#person" }
+        }
+      ]
     }
     </script>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://onymou.san/" />
-    <meta property="og:title" content="Onymousan | Photography" />
-    <meta property="og:description" content="Capturer l'énergie de la ville. De Paris vers le Monde." />
-    <meta property="og:image" content="https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg" />
+    <meta property="og:title" content="Onymousan | Photographe Urbain Paris" />
+    <meta property="og:description" content="Découvrez une vision dynamique et élégante de Paris. Street photography, architecture et scènes de vie." />
+    <meta property="og:image" content="https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg?auto=compress&cs=tinysrgb&w=1200" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://onymou.san/" />
     <meta property="twitter:title" content="Onymousan | Photography" />
     <meta property="twitter:description" content="Capturer l'énergie de la ville. De Paris vers le Monde." />
-    <meta property="twitter:image" content="https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg" />
+    <meta property="twitter:image" content="https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg?auto=compress&cs=tinysrgb&w=1200" />
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -76,8 +106,6 @@
     </script>
 
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- Icons -->
@@ -111,6 +139,7 @@
       .glass-nav {
         background-color: rgba(255, 255, 255, 0.8);
         backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border-bottom: 1px solid rgba(229, 229, 229, 1);
       }
       .dark .glass-nav {
@@ -122,20 +151,32 @@
       .gallery-item:hover .gallery-overlay {
         opacity: 1;
       }
+      .gallery-item img {
+        transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
       .gallery-item:hover img {
-        transform: scale(1.05);
+        transform: scale(1.03);
+      }
+      
+      /* Smooth Image Loading */
+      img {
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+      }
+      img.loaded {
+        opacity: 1;
       }
     </style>
 </head>
 <body class="bg-white text-neutral-900 dark:bg-black dark:text-white transition-colors duration-300 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent" aria-label="Navigation Principale">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <a href="#" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });" class="font-serif text-2xl font-bold tracking-wide text-black dark:text-white hover:opacity-70 transition-opacity">
+                    <a href="#" onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });" class="font-serif text-2xl font-bold tracking-wide text-black dark:text-white hover:opacity-70 transition-opacity" aria-label="Retour à l'accueil">
                         ONYMOU<span class="italic text-neutral-500 dark:text-neutral-400">SAN</span>
                     </a>
                 </div>
@@ -148,19 +189,19 @@
                     
                     <div class="h-4 w-px bg-neutral-300 dark:bg-neutral-700"></div>
 
-                    <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors">
+                    <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" aria-label="Instagram">
                         <span class="text-xs uppercase tracking-widest font-medium">Instagram</span>
                     </a>
-                    <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="px-4 py-2 border border-neutral-300 dark:border-white/30 text-neutral-900 dark:text-white text-xs uppercase tracking-widest hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center gap-2">
+                    <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="px-4 py-2 border border-neutral-300 dark:border-white/30 text-neutral-900 dark:text-white text-xs uppercase tracking-widest hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-all duration-300 flex items-center gap-2" aria-label="Pexels">
                         <span>Pexels</span>
                         <span class="material-symbols-outlined text-sm">open_in_new</span>
                     </a>
                     
                     <div class="flex items-center gap-2">
-                        <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-white/10 transition-colors text-neutral-600 dark:text-neutral-400" aria-label="Toggle Theme">
+                        <button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-white/10 transition-colors text-neutral-600 dark:text-neutral-400" aria-label="Changer le thème">
                             <span class="material-symbols-outlined text-lg" id="theme-icon-desktop">dark_mode</span>
                         </button>
-                        <button onclick="toggleLang()" class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-white/10 transition-colors text-neutral-600 dark:text-neutral-400" aria-label="Switch Language">
+                        <button onclick="toggleLang()" class="p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-white/10 transition-colors text-neutral-600 dark:text-neutral-400" aria-label="Changer la langue">
                             <span class="material-symbols-outlined text-lg">language</span>
                         </button>
                     </div>
@@ -168,13 +209,13 @@
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center gap-4">
-                    <button onclick="toggleTheme()" class="text-neutral-900 dark:text-white p-1" aria-label="Toggle Theme">
+                    <button onclick="toggleTheme()" class="text-neutral-900 dark:text-white p-1" aria-label="Changer le thème">
                         <span class="material-symbols-outlined text-xl" id="theme-icon-mobile">dark_mode</span>
                     </button>
-                    <button onclick="toggleLang()" class="text-neutral-900 dark:text-white" aria-label="Switch Language">
+                    <button onclick="toggleLang()" class="text-neutral-900 dark:text-white" aria-label="Changer la langue">
                        <span class="text-xs font-bold uppercase" id="lang-display">FR</span>
                     </button>
-                    <button onclick="toggleMobileMenu()" class="text-neutral-900 dark:text-white hover:opacity-70 focus:outline-none" aria-label="Open Menu">
+                    <button onclick="toggleMobileMenu()" class="text-neutral-900 dark:text-white hover:opacity-70 focus:outline-none" aria-label="Ouvrir le menu">
                         <span class="material-symbols-outlined text-3xl" id="menu-icon">menu</span>
                     </button>
                 </div>
@@ -197,7 +238,8 @@
     <header class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <!-- Hero Image: Passerelle en bois (Image 34951205) -->
-            <img id="hero-bg" alt="Passerelle Parisienne" class="w-full h-full object-cover opacity-80 dark:opacity-60 transition-opacity duration-500 will-change-transform" src="https://images.pexels.com/photos/34951205/pexels-photo-34951205.jpeg" loading="eager" fetchpriority="high" />
+            <!-- Optimized: Added Pexels resize params -->
+            <img id="hero-bg" alt="Passerelle Parisienne avec passants, street photography noir et blanc par Onymousan" class="w-full h-full object-cover opacity-0 transition-opacity duration-700 will-change-transform" src="https://images.pexels.com/photos/34951205/pexels-photo-34951205.jpeg?auto=compress&cs=tinysrgb&w=1920" loading="eager" fetchpriority="high" onload="this.classList.add('loaded')" />
             <div class="absolute inset-0 bg-gradient-to-b from-white/80 via-white/40 to-white dark:from-black/70 dark:via-black/40 dark:to-black transition-colors duration-500"></div>
         </div>
 
@@ -208,7 +250,7 @@
             </h1>
             <p class="text-lg md:text-xl font-light text-neutral-700 dark:text-neutral-300 mb-10 max-w-xl mx-auto animate-fade-in-up leading-relaxed" style="animation-delay: 0.5s;" data-i18n="hero_desc">Capturer l'énergie de la ville. <br>De Paris vers le Monde.</p>
             <div class="animate-fade-in-up" style="animation-delay: 0.7s;">
-                <a href="#gallery" class="nav-link inline-flex items-center gap-3 px-8 py-4 border border-neutral-400/30 dark:border-white/30 bg-white/10 dark:bg-black/20 backdrop-blur-md text-black dark:text-white rounded-full text-xs uppercase tracking-[0.2em] hover:bg-white/40 dark:hover:bg-white/10 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 group">
+                <a href="#gallery" class="nav-link inline-flex items-center gap-3 px-8 py-4 border border-neutral-400/30 dark:border-white/30 bg-white/10 dark:bg-black/20 backdrop-blur-md text-black dark:text-white rounded-full text-xs uppercase tracking-[0.2em] hover:bg-white/40 dark:hover:bg-white/10 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 group" aria-label="Voir la galerie">
                     <span class="font-medium" data-i18n="btn_gallery">Découvrir la Galerie</span>
                     <span class="material-symbols-outlined text-base group-hover:translate-y-1 transition-transform duration-500">arrow_downward</span>
                 </a>
@@ -223,14 +265,14 @@
                 <h2 class="text-4xl md:text-5xl font-serif text-black dark:text-white" data-i18n="gallery_title">Highlights</h2>
                 <p class="text-neutral-500 text-xs md:text-sm mt-3 uppercase tracking-[0.2em]" data-i18n="gallery_subtitle">Sélection Parisienne</p>
             </div>
-            <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors">
+            <a href="https://www.pexels.com/fr-fr/@amaurymic/highlights/" target="_blank" rel="noreferrer" class="hidden md:flex items-center gap-2 text-xs uppercase tracking-widest text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white transition-colors" aria-label="Voir le profil Pexels">
                 <span data-i18n="link_pexels">Voir tout sur Pexels</span>
                 <span class="material-symbols-outlined text-sm">north_east</span>
             </a>
         </div>
 
-        <!-- Editorial Grid -->
-        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[350px]">
+        <!-- Masonry Grid (Columns) Layout -->
+        <div id="gallery-grid" class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
             <!-- Gallery items will be injected here by JS -->
         </div>
     </main>
@@ -263,8 +305,8 @@
 
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- NYC -->
-                <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl">
-                    <img alt="New York" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.squarespace-cdn.com/content/v1/5424ba9ee4b0c69384ec83e1/1746648544203-MFD0NPE9CVLZ2E3ZN0Q1/5+MPH.jpg?format=1500w" loading="lazy" decoding="async" />
+                <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl rounded-lg">
+                    <img alt="Photographie de rue noir et blanc New York City, 5 MPH sign, ambiance urbaine" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://images.squarespace-cdn.com/content/v1/5424ba9ee4b0c69384ec83e1/1746648544203-MFD0NPE9CVLZ2E3ZN0Q1/5+MPH.jpg?format=1500w" loading="lazy" decoding="async" onload="this.classList.add('loaded')" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-10 left-10">
                         <h3 class="text-4xl font-serif text-white mb-2" data-i18n="dest_nyc">New York</h3>
@@ -276,8 +318,8 @@
                 </div>
 
                 <!-- Japan -->
-                <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl">
-                    <img alt="Japan" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://live.staticflickr.com/3232/3076176097_418bfa0cd9_b.jpg" loading="lazy" decoding="async" />
+                <div class="relative group overflow-hidden h-[500px] cursor-default shadow-xl rounded-lg">
+                    <img alt="Tokyo street photography, passage piéton sous la pluie, parapluies, ambiance néon" class="w-full h-full object-cover opacity-80 dark:opacity-70 group-hover:scale-105 transition-all duration-1000 ease-out" src="https://live.staticflickr.com/3232/3076176097_418bfa0cd9_b.jpg" loading="lazy" decoding="async" onload="this.classList.add('loaded')" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
                     <div class="absolute bottom-10 left-10">
                         <h3 class="text-4xl font-serif text-white mb-2" data-i18n="dest_japan">Japon</h3>
@@ -307,7 +349,7 @@
                     <span>a_michaux@outlook.com</span>
                 </a>
                 <span class="hidden md:block w-1 h-1 bg-black dark:bg-white rounded-full opacity-50"></span>
-                <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="flex items-center gap-3 text-neutral-800 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors">
+                <a href="https://www.instagram.com/onymou.san/" target="_blank" rel="noreferrer" class="flex items-center gap-3 text-neutral-800 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition-colors" aria-label="Instagram">
                     <span class="material-symbols-outlined">photo_camera</span>
                     <span>@onymou.san</span>
                 </a>
@@ -320,13 +362,13 @@
     </footer>
 
     <!-- Lightbox -->
-    <div id="lightbox" class="fixed inset-0 z-[100] bg-white/95 dark:bg-black/95 hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300">
-        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-black dark:text-white hover:opacity-60 focus:outline-none z-50 p-2">
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-white/95 dark:bg-black/95 hidden items-center justify-center p-4 opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-label="Image en plein écran">
+        <button onclick="closeLightbox()" class="absolute top-6 right-6 text-black dark:text-white hover:opacity-60 focus:outline-none z-50 p-2" aria-label="Fermer">
             <span class="material-symbols-outlined text-3xl">close</span>
         </button>
 
         <div class="relative w-full max-w-6xl h-full flex items-center justify-center">
-            <button onclick="event.stopPropagation(); prevImage()" class="absolute left-0 text-black dark:text-white hover:opacity-60 p-4 z-50 hidden md:block">
+            <button onclick="event.stopPropagation(); prevImage()" class="absolute left-0 text-black dark:text-white hover:opacity-60 p-4 z-50 hidden md:block" aria-label="Image précédente">
                 <span class="material-symbols-outlined text-4xl">chevron_left</span>
             </button>
 
@@ -338,18 +380,18 @@
                 </div>
             </div>
 
-            <button onclick="event.stopPropagation(); nextImage()" class="absolute right-0 text-black dark:text-white hover:opacity-60 p-4 z-50 hidden md:block">
+            <button onclick="event.stopPropagation(); nextImage()" class="absolute right-0 text-black dark:text-white hover:opacity-60 p-4 z-50 hidden md:block" aria-label="Image suivante">
                 <span class="material-symbols-outlined text-4xl">chevron_right</span>
             </button>
         </div>
     </div>
 
     <!-- Code Source Modal -->
-    <div class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300" id="code-modal">
+    <div class="hidden fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 opacity-0 transition-opacity duration-300" id="code-modal" role="dialog" aria-modal="true">
         <div class="bg-white dark:bg-neutral-900 w-full max-w-4xl rounded-xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh] transform scale-95 transition-transform duration-300">
             <div class="p-4 border-b border-neutral-200 dark:border-neutral-800 flex justify-between items-center bg-neutral-50 dark:bg-black/50">
                 <h3 class="text-lg font-bold text-black dark:text-white font-serif" data-i18n="code_title">Code Source Complet</h3>
-                <button class="p-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-full transition-colors" onclick="closeCodeModal()">
+                <button class="p-2 text-neutral-600 dark:text-neutral-400 hover:bg-neutral-200 dark:hover:bg-neutral-800 rounded-full transition-colors" onclick="closeCodeModal()" aria-label="Fermer">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
@@ -432,59 +474,84 @@
         const galleryImages = [
             {
                 id: 1,
-                src: "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg",
+                // Using ?auto=compress&w=1200 for optimal loading speed/quality balance
+                src: "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Carrefour", en: "Intersection" },
                 subtitle: { fr: "Flux & Architecture", en: "Flow & Architecture" },
-                aspectRatio: 'portrait'
+                altText: { 
+                    fr: "Grand carrefour parisien ensoleillé avec immeuble haussmannien et couple sur scooter vert, ambiance urbaine dynamique.", 
+                    en: "Sunny Parisian intersection with Haussmann building and couple on green scooter, dynamic urban atmosphere." 
+                }
             },
             {
                 id: 2,
-                src: "https://images.pexels.com/photos/34951415/pexels-photo-34951415.jpeg",
+                src: "https://images.pexels.com/photos/34951415/pexels-photo-34951415.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Rue La Fontaine", en: "Rue La Fontaine" },
                 subtitle: { fr: "Générations", en: "Generations" },
-                aspectRatio: 'landscape'
+                altText: {
+                    fr: "Scène de rue Paris 16e, rue Jean de La Fontaine, contraste de générations entre jeunes en maillot de foot et homme âgé.",
+                    en: "Street scene in Paris 16th, Rue Jean de La Fontaine, generational contrast between youths in soccer jersey and older man."
+                }
             },
             {
                 id: 3,
-                src: "https://images.pexels.com/photos/34951324/pexels-photo-34951324.jpeg",
+                src: "https://images.pexels.com/photos/34951324/pexels-photo-34951324.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "38 Saint Louis", en: "38 Saint Louis" },
                 subtitle: { fr: "Le Lecteur", en: "The Reader" },
-                aspectRatio: 'portrait'
+                altText: {
+                    fr: "Homme lisant paisiblement en terrasse d'un vieux café parisien rue Saint Louis, devant une façade authentique.",
+                    en: "Man reading peacefully on the terrace of an old Parisian cafe on Rue Saint Louis, in front of an authentic facade."
+                }
             },
             {
                 id: 4,
-                src: "https://images.pexels.com/photos/34951307/pexels-photo-34951307.jpeg",
+                src: "https://images.pexels.com/photos/34951307/pexels-photo-34951307.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Conversation", en: "Conversation" },
                 subtitle: { fr: "Groupe Urbain", en: "Urban Group" },
-                aspectRatio: 'portrait'
+                altText: {
+                    fr: "Trois personnes âgées discutant sur le trottoir devant une vitrine moderne Fursac, contraste social et urbain.",
+                    en: "Three elderly people chatting on the sidewalk in front of a modern Fursac window display, social and urban contrast."
+                }
             },
             {
                 id: 5,
-                src: "https://images.pexels.com/photos/34951209/pexels-photo-34951209.jpeg",
+                src: "https://images.pexels.com/photos/34951209/pexels-photo-34951209.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Costes", en: "Costes" },
                 subtitle: { fr: "Intemporel", en: "Timeless" },
-                aspectRatio: 'landscape'
+                altText: {
+                    fr: "Photographie noir et blanc de la façade à arcades du restaurant Costes avec une voiture ancienne, ambiance intemporelle.",
+                    en: "Black and white photography of the Costes restaurant arcade facade with a vintage car, timeless atmosphere."
+                }
             },
             {
                 id: 6,
-                src: "https://images.pexels.com/photos/34951408/pexels-photo-34951408.jpeg",
+                src: "https://images.pexels.com/photos/34951408/pexels-photo-34951408.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Nocturne", en: "Nocturne" },
                 subtitle: { fr: "Solitude", en: "Solitude" },
-                aspectRatio: 'landscape'
+                altText: {
+                    fr: "Vue de nuit cinématographique d'une laverie parisienne éclairée avec une personne seule à l'intérieur.",
+                    en: "Cinematic night view of a lit Parisian laundromat with a lone person inside."
+                }
             },
             {
                 id: 7,
-                src: "https://images.pexels.com/photos/34951198/pexels-photo-34951198.jpeg",
+                src: "https://images.pexels.com/photos/34951198/pexels-photo-34951198.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "L'Ouvrier", en: "The Worker" },
                 subtitle: { fr: "Hauteur", en: "Heights" },
-                aspectRatio: 'portrait'
+                altText: {
+                    fr: "Ouvrier sur une échelle travaillant sur une façade haussmannienne classique, photo noir et blanc en contre-plongée.",
+                    en: "Worker on a ladder working on a classic Haussmann facade, low angle black and white photo."
+                }
             },
             {
                 id: 8,
-                src: "https://images.pexels.com/photos/34951146/pexels-photo-34951146.jpeg",
+                src: "https://images.pexels.com/photos/34951146/pexels-photo-34951146.jpeg?auto=compress&cs=tinysrgb&w=1200",
                 title: { fr: "Lifestyle", en: "Lifestyle" },
                 subtitle: { fr: "Contemplation", en: "Contemplation" },
-                aspectRatio: 'landscape'
+                altText: {
+                    fr: "Personne âgée regardant une vitrine Polo & Argentina Lifestyle, jeu de reflets urbains en noir et blanc.",
+                    en: "Elderly person looking at a Polo & Argentina Lifestyle window display, urban reflection play in black and white."
+                }
             }
         ];
 
@@ -522,13 +589,22 @@
                 }
             });
 
-            // Parallax Effect for Hero Background
+            // Optimized Parallax Effect for Hero Background using requestAnimationFrame
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+
             window.addEventListener('scroll', () => {
-                const heroBg = document.getElementById('hero-bg');
-                if (heroBg) {
-                    const scrollPosition = window.pageYOffset;
-                    // Move background down at 50% of scroll speed for depth
-                    heroBg.style.transform = `translateY(${scrollPosition * 0.5}px)`;
+                lastScrollY = window.scrollY;
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const heroBg = document.getElementById('hero-bg');
+                        if (heroBg) {
+                            // Translate Y at 50% speed
+                            heroBg.style.transform = `translate3d(0, ${lastScrollY * 0.5}px, 0)`;
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
                 }
             });
 
@@ -564,7 +640,7 @@
         function toggleLang() {
             currentLang = currentLang === 'fr' ? 'en' : 'fr';
             updateLanguageUI();
-            renderGallery(); // Re-render gallery to translate titles
+            renderGallery(); // Re-render gallery to translate titles and alt text
         }
 
         function updateLanguageUI() {
@@ -608,33 +684,23 @@
         function renderGallery() {
             const grid = document.getElementById('gallery-grid');
             
-            // Layout configuration for 8 items to create an asymmetrical/editorial look
-            const gridClasses = [
-                'md:col-span-6 md:row-span-2', // Item 1: Large Vertical (Scooter)
-                'md:col-span-6 md:row-span-1', // Item 2: Landscape Top Right (Jean de la Fontaine)
-                'md:col-span-3 md:row-span-1', // Item 3: Small Portrait (Reader)
-                'md:col-span-3 md:row-span-1', // Item 4: Small Portrait (Fursac)
-                'md:col-span-8 md:row-span-1', // Item 5: Wide Landscape (Costes)
-                'md:col-span-4 md:row-span-1', // Item 6: Landscape (Laverie)
-                'md:col-span-4 md:row-span-1', // Item 7: Vertical (Ladder)
-                'md:col-span-8 md:row-span-1', // Item 8: Landscape (Window)
-            ];
-
+            // Masonry Layout: Simply mapping images without predefined row/col spans.
+            // Tailwind 'columns' utility handles the distribution.
             grid.innerHTML = galleryImages.map((img, index) => {
-                // Fallback for grid class if more images are added
-                const layoutClass = gridClasses[index] || 'md:col-span-4 md:row-span-1'; 
+                const altText = img.altText[currentLang] || img.title[currentLang];
                 
                 return `
-                <div class="gallery-item relative group overflow-hidden cursor-pointer ${layoutClass} w-full h-full" onclick="openLightbox(${index})">
+                <div class="gallery-item break-inside-avoid mb-6 relative group overflow-hidden cursor-pointer w-full rounded-sm" onclick="openLightbox(${index})">
                     <img 
-                        alt="${img.title[currentLang]}" 
-                        class="w-full h-full object-cover transition-transform duration-1000 ease-out" 
+                        alt="${altText}" 
+                        class="w-full h-auto object-cover block will-change-transform" 
                         src="${img.src}" 
                         loading="lazy"
                         decoding="async"
+                        onload="this.classList.add('loaded')"
                     />
                     <div class="gallery-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-4">
-                        <span class="font-serif text-2xl md:text-3xl text-white italic translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                        <span class="font-serif text-xl md:text-2xl text-white italic translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
                             ${img.title[currentLang]}
                         </span>
                         <span class="text-xs text-white/80 uppercase tracking-widest mt-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">
@@ -688,7 +754,9 @@
             const lightboxTitle = document.getElementById('lightbox-title');
             const lightboxSubtitle = document.getElementById('lightbox-subtitle');
 
-            lightboxImg.src = img.src;
+            // Load high res for lightbox if possible, but keeping consistent for now
+            lightboxImg.src = img.src; 
+            lightboxImg.alt = img.altText[currentLang];
             lightboxTitle.textContent = img.title[currentLang];
             lightboxSubtitle.textContent = img.subtitle[currentLang];
         }

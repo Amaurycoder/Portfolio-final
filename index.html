@@ -13,7 +13,7 @@
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Portfolio de Onymousan, photographe de rue à Paris. Une exploration visuelle du chaos organique et de l'architecture urbaine en noir et blanc." />
-    <meta name="keywords" content="photographe paris, street photography paris, photo rue noir et blanc, onymou.san, art urbain, photographe voyage, japon, new york, portfolio photo" />
+    <meta name="keywords" content="photographe paris, street photography paris, photo rue noir et blanc, onymou.san, art urbain, photographe voyage, japon, new york, portfolio photo, ingénieur photographe" />
     <meta name="author" content="Onymousan" />
     <meta name="robots" content="index, follow" />
 
@@ -34,6 +34,8 @@
           "name": "Onymousan",
           "url": "https://onymou.san/",
           "jobTitle": "Photographe de Rue",
+          "alumniOf": "École d'Ingénieur",
+          "knowsAbout": ["Street Photography", "Urban Chaos", "Black and White Photography", "Architecture"],
           "image": "https://images.pexels.com/photos/34951205/pexels-photo-34951205.jpeg?auto=compress&cs=tinysrgb&w=1200",
           "sameAs": [
             "https://www.instagram.com/onymou.san/"
@@ -43,7 +45,7 @@
             "addressLocality": "Paris",
             "addressCountry": "FR"
           },
-          "description": "Photographe spécialisé dans la street photography et l'exploration urbaine à Paris."
+          "description": "Ingénieur et photographe spécialisé dans la street photography, capturant le chaos organique de Paris, New York et Tokyo."
         },
         {
           "@type": "WebSite",
@@ -51,14 +53,15 @@
           "url": "https://onymou.san/",
           "name": "Onymousan Photography",
           "author": { "@id": "https://onymou.san/#person" },
-          "description": "Portfolio de photographie urbaine : Paris, New York, Japon.",
-          "inLanguage": "fr-FR"
+          "description": "Portfolio de photographie urbaine minimaliste : Paris, New York, Japon.",
+          "inLanguage": ["fr-FR", "en-US"],
+          "genre": "Street Photography"
         },
         {
           "@type": "ImageGallery",
-          "name": "Portfolio Street Photography Paris",
+          "name": "Highlights Paris",
           "author": { "@id": "https://onymou.san/#person" },
-          "description": "Sélection de photographies de rue capturant l'atmosphère parisienne.",
+          "description": "Sélection éditoriale de scènes de rue parisiennes.",
           "provider": { "@id": "https://onymou.san/#person" }
         }
       ]
@@ -71,6 +74,8 @@
     <meta property="og:title" content="Onymousan | Street Photography Paris" />
     <meta property="og:description" content="L'ordre et le chaos organique. Découvrez une vision dynamique de Paris, New York et Tokyo à travers l'objectif." />
     <meta property="og:image" content="https://images.pexels.com/photos/34951205/pexels-photo-34951205.jpeg?auto=compress&cs=tinysrgb&w=1200" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
@@ -89,18 +94,18 @@
             fontFamily: {
               sans: ['Montserrat', 'sans-serif'],
               serif: ['Playfair Display', 'serif'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+            },
+            transitionTimingFunction: {
+              'expo': 'cubic-bezier(0.19, 1, 0.22, 1)', // Consistent "Luxury" easing
             },
             animation: {
-              'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-              'shimmer': 'shimmer 1.5s infinite',
+              'fade-in-up': 'fadeInUp 1s cubic-bezier(0.19, 1, 0.22, 1) forwards',
             },
             keyframes: {
               fadeInUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '0%': { opacity: '0', transform: 'translateY(30px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              shimmer: {
-                '100%': { transform: 'translateX(100%)' },
               }
             },
           },
@@ -108,11 +113,11 @@
       };
     </script>
 
-    <!-- Fonts -->
+    <!-- Fonts: Added display=swap for better LCP -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap" rel="stylesheet">
 
     <style>
       /* Custom Scrollbar */
@@ -154,42 +159,55 @@
       .gallery-item:hover .gallery-overlay {
         opacity: 1;
       }
+      /* Consistent Expo Easing for Scale */
       .gallery-item img {
-        transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1);
       }
       .gallery-item:hover img {
-        transform: scale(1.02);
+        transform: scale(1.03);
       }
       
       /* Smooth Image Loading */
-      /* Apply opacity transition only to lazy-loaded images in gallery/hero */
       .animate-load {
         opacity: 0;
-        transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.8s ease-in-out;
       }
       .animate-load.loaded {
         opacity: 1;
       }
 
-      /* Typographic Text Stroke for Destinations */
-      .text-stroke {
-        -webkit-text-stroke: 1px rgba(0,0,0,0.1);
-        color: transparent;
+      /* Flight Path Animation */
+      .flight-path {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        transition: stroke-dashoffset 2.5s cubic-bezier(0.45, 0, 0.55, 1);
       }
-      .dark .text-stroke {
-        -webkit-text-stroke: 1px rgba(255,255,255,0.2);
-        color: transparent;
+      .group:hover .flight-path {
+        stroke-dashoffset: 0;
       }
-      .group:hover .text-stroke {
-        -webkit-text-stroke: 0;
-        color: inherit;
+      .plane-icon {
+        offset-path: path("M10,80 Q150,-20 290,80");
+        offset-distance: 0%;
+        transition: offset-distance 2.5s cubic-bezier(0.45, 0, 0.55, 1);
+      }
+      .group:hover .plane-icon {
+        offset-distance: 100%;
       }
     </style>
 </head>
-<body class="bg-white text-neutral-900 dark:bg-black dark:text-white transition-colors duration-300 antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+<body class="bg-white text-neutral-900 dark:bg-black dark:text-white transition-colors duration-500 ease-out-expo antialiased selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+    
+    <!-- NoScript Fallback for SEO Crawlers -->
+    <noscript>
+        <div class="p-4 bg-neutral-100 dark:bg-neutral-900 text-center">
+            <h1>Onymousan - Street Photography Paris</h1>
+            <p>Portfolio d'Onymousan. Photographie de rue, Noir et Blanc, Paris, New York, Tokyo.</p>
+            <p>Veuillez activer JavaScript pour voir la galerie complète.</p>
+        </div>
+    </noscript>
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 border-b border-transparent bg-transparent" aria-label="Navigation Principale">
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 ease-expo border-b border-transparent bg-transparent" aria-label="Navigation Principale">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -238,7 +256,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden absolute w-full bg-white dark:bg-black border-t border-neutral-200 dark:border-white/10 transition-all duration-300 ease-in-out opacity-0 -translate-y-4 pointer-events-none">
+        <div id="mobile-menu" class="md:hidden absolute w-full bg-white dark:bg-black border-t border-neutral-200 dark:border-white/10 transition-all duration-500 ease-expo opacity-0 -translate-y-4 pointer-events-none">
             <div class="px-4 pt-2 pb-6 space-y-1 text-center shadow-xl">
                 <a href="#gallery" class="mobile-nav-link block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5" data-i18n="nav_gallery">Portfolio</a>
                 <a href="#about" class="mobile-nav-link block px-3 py-3 text-neutral-600 dark:text-neutral-400 hover:text-black dark:hover:text-white text-sm uppercase tracking-widest hover:bg-neutral-100 dark:hover:bg-white/5" data-i18n="nav_about">À Propos</a>
@@ -260,21 +278,21 @@
 
         <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
             <p class="text-sm md:text-base uppercase tracking-[0.4em] mb-6 text-neutral-600 dark:text-neutral-400 animate-fade-in-up" style="animation-delay: 0.1s;" data-i18n="hero_subtitle">Paris • Photographie</p>
-            <h1 class="text-5xl md:text-7xl lg:text-9xl font-serif mb-8 leading-none tracking-tight animate-fade-in-up text-black dark:text-white transition-colors" style="animation-delay: 0.3s;">
+            <h1 class="text-5xl md:text-7xl lg:text-9xl font-serif mb-8 leading-none tracking-tight animate-fade-in-up text-black dark:text-white transition-colors duration-500" style="animation-delay: 0.3s;">
                 ONYMOU<span class="italic text-neutral-500 dark:text-neutral-400">SAN</span>
             </h1>
             <p class="text-lg md:text-xl font-light text-neutral-700 dark:text-neutral-300 mb-10 max-w-xl mx-auto animate-fade-in-up leading-relaxed" style="animation-delay: 0.5s;" data-i18n="hero_desc">Capturer l'énergie de la ville. <br>De Paris vers le Monde.</p>
             <div class="animate-fade-in-up" style="animation-delay: 0.7s;">
-                <a href="#gallery" class="nav-link inline-flex items-center gap-3 px-8 py-4 border border-neutral-400/30 dark:border-white/30 bg-white/10 dark:bg-black/20 backdrop-blur-md text-black dark:text-white rounded-full text-xs uppercase tracking-[0.2em] hover:bg-white/40 dark:hover:bg-white/10 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 group" aria-label="Voir la galerie">
+                <a href="#gallery" class="nav-link inline-flex items-center gap-3 px-8 py-4 border border-neutral-400/30 dark:border-white/30 bg-white/10 dark:bg-black/20 backdrop-blur-md text-black dark:text-white rounded-full text-xs uppercase tracking-[0.2em] hover:bg-white/40 dark:hover:bg-white/10 transition-all duration-500 ease-expo hover:shadow-lg hover:-translate-y-1 group" aria-label="Voir la galerie">
                     <span class="font-medium" data-i18n="btn_gallery">Découvrir la Galerie</span>
-                    <span class="material-symbols-outlined text-base group-hover:translate-y-1 transition-transform duration-500">arrow_downward</span>
+                    <span class="material-symbols-outlined text-base group-hover:translate-y-1 transition-transform duration-500 ease-expo">arrow_downward</span>
                 </a>
             </div>
         </div>
     </header>
 
     <!-- Gallery -->
-    <main id="gallery" class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 py-16 md:py-24 bg-white dark:bg-black transition-colors duration-300" style="content-visibility: auto">
+    <main id="gallery" class="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-12 py-16 md:py-24 bg-white dark:bg-black transition-colors duration-500 ease-expo" style="content-visibility: auto">
         <div class="flex justify-between items-end mb-12 md:mb-20 border-b border-neutral-200 dark:border-white/10 pb-6">
             <div>
                 <h2 class="text-4xl md:text-6xl font-serif text-black dark:text-white" data-i18n="gallery_title">Highlights</h2>
@@ -282,15 +300,14 @@
             </div>
         </div>
 
-        <!-- Editorial Grid Layout (12 Columns) -->
-        <!-- items-center ensures no stretching/cropping, gap-y-12 provides elegant spacing -->
-        <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-12 gap-y-12 md:gap-y-16 gap-x-8 items-center">
+        <!-- Masonry Editorial Layout (3 Columns) -->
+        <div id="gallery-grid" class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
             <!-- Gallery items will be injected here by JS -->
         </div>
     </main>
 
     <!-- About -->
-    <section id="about" class="py-24 md:py-32 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-300" style="content-visibility: auto">
+    <section id="about" class="py-24 md:py-32 bg-neutral-50 dark:bg-neutral-900 transition-colors duration-500 ease-expo" style="content-visibility: auto">
         <div class="max-w-3xl mx-auto px-6 text-center">
             <div class="flex justify-center mb-8">
                 <span class="material-symbols-outlined text-5xl text-neutral-400 font-light">shutter_speed</span>
@@ -310,34 +327,84 @@
     </section>
 
     <!-- Destinations -->
-    <section id="destinations" class="py-24 md:py-32 bg-neutral-100 dark:bg-neutral-950 border-t border-neutral-200 dark:border-white/5 transition-colors duration-300" style="content-visibility: auto">
-        <div class="max-w-5xl mx-auto px-6 md:px-12">
-            <div class="mb-16 md:mb-24">
-                <h2 class="text-sm md:text-base text-neutral-500 uppercase tracking-[0.2em] mb-4" data-i18n="dest_title">Prochaines Visions</h2>
-                <div class="h-px bg-neutral-300 dark:bg-neutral-800 w-full"></div>
+    <section id="destinations" class="py-24 md:py-32 bg-neutral-100 dark:bg-neutral-950 border-t border-neutral-200 dark:border-white/5 transition-colors duration-500 ease-expo" style="content-visibility: auto">
+        <div class="max-w-6xl mx-auto px-6 md:px-12">
+            <div class="mb-16 md:mb-20 text-center">
+                <h2 class="text-sm md:text-base text-neutral-500 uppercase tracking-[0.2em] mb-4" data-i18n="dest_title">Roadmap & Projets</h2>
+                <div class="h-px bg-neutral-300 dark:bg-neutral-800 w-24 mx-auto"></div>
             </div>
 
-            <!-- Typographic List Layout -->
-            <div class="flex flex-col">
-                <!-- NYC -->
-                <div class="group relative py-12 md:py-16 border-b border-neutral-300 dark:border-neutral-800 cursor-default">
-                    <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 z-10 relative">
-                        <h3 class="text-5xl md:text-8xl font-serif text-stroke text-transparent group-hover:text-black dark:group-hover:text-white transition-all duration-500" data-i18n="dest_nyc">New York</h3>
-                        <div class="flex items-center gap-4 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-                            <span class="text-sm uppercase tracking-widest text-neutral-600 dark:text-neutral-400" data-i18n="dest_nyc_desc">Verticalité & Chaos</span>
-                            <span class="material-symbols-outlined transform group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+            <!-- Technical Flight Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <!-- NYC Card -->
+                <div class="group relative bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 p-8 hover:border-black dark:hover:border-white transition-all duration-700 ease-expo shadow-sm hover:shadow-xl rounded-sm overflow-hidden">
+                    <!-- Top Technical Data -->
+                    <div class="flex justify-between items-start mb-8 font-mono text-[10px] md:text-xs text-neutral-400 dark:text-neutral-500">
+                        <div class="flex flex-col gap-1">
+                            <span class="tracking-widest">FLT: PAR-NYC</span>
+                            <span class="tracking-widest">DIST: 5836 KM</span>
                         </div>
+                        <div class="border border-neutral-200 dark:border-neutral-800 px-2 py-1 rounded-sm bg-neutral-50 dark:bg-neutral-900">
+                            STATUS: <span class="text-black dark:text-white font-bold" data-i18n="status_planned">PLANIFIÉ</span>
+                        </div>
+                    </div>
+
+                    <!-- SVG Flight Animation -->
+                    <div class="relative h-24 w-full mb-8">
+                        <svg class="w-full h-full overflow-visible" viewBox="0 0 300 80" preserveAspectRatio="none">
+                            <!-- Background Path (Dotted) -->
+                            <path d="M10,70 Q150,-10 290,70" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" class="text-neutral-300 dark:text-neutral-800"></path>
+                            <!-- Animated Path -->
+                            <path d="M10,70 Q150,-10 290,70" fill="none" stroke="currentColor" stroke-width="1.5" class="text-black dark:text-white flight-path"></path>
+                            <!-- Plane Icon -->
+                            <g class="plane-icon text-black dark:text-white" style="offset-path: path('M10,70 Q150,-10 290,70');">
+                                <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="currentColor" transform="rotate(90) scale(0.8)"/>
+                            </g>
+                        </svg>
+                        <div class="absolute bottom-0 left-0 font-mono text-sm font-bold text-black dark:text-white">PAR</div>
+                        <div class="absolute bottom-0 right-0 font-mono text-sm font-bold text-black dark:text-white">JFK</div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mt-4">
+                        <h3 class="text-3xl md:text-4xl font-serif text-black dark:text-white mb-2" data-i18n="dest_nyc">New York</h3>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500" data-i18n="dest_nyc_desc">Verticalité & Chaos</p>
                     </div>
                 </div>
 
-                <!-- Japan -->
-                <div class="group relative py-12 md:py-16 border-b border-neutral-300 dark:border-neutral-800 cursor-default">
-                    <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-4 z-10 relative">
-                        <h3 class="text-5xl md:text-8xl font-serif text-stroke text-transparent group-hover:text-black dark:group-hover:text-white transition-all duration-500" data-i18n="dest_japan">Japon</h3>
-                        <div class="flex items-center gap-4 opacity-50 group-hover:opacity-100 transition-opacity duration-500">
-                            <span class="text-sm uppercase tracking-widest text-neutral-600 dark:text-neutral-400" data-i18n="dest_japan_desc">Tradition & Néons</span>
-                            <span class="material-symbols-outlined transform group-hover:translate-x-2 transition-transform duration-300">arrow_forward</span>
+                <!-- Japan Card -->
+                <div class="group relative bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 p-8 hover:border-black dark:hover:border-white transition-all duration-700 ease-expo shadow-sm hover:shadow-xl rounded-sm overflow-hidden">
+                    <!-- Top Technical Data -->
+                    <div class="flex justify-between items-start mb-8 font-mono text-[10px] md:text-xs text-neutral-400 dark:text-neutral-500">
+                        <div class="flex flex-col gap-1">
+                            <span class="tracking-widest">FLT: PAR-TYO</span>
+                            <span class="tracking-widest">DIST: 9712 KM</span>
                         </div>
+                        <div class="border border-neutral-200 dark:border-neutral-800 px-2 py-1 rounded-sm bg-neutral-50 dark:bg-neutral-900">
+                            STATUS: <span class="text-black dark:text-white font-bold" data-i18n="status_planned">PLANIFIÉ</span>
+                        </div>
+                    </div>
+
+                    <!-- SVG Flight Animation -->
+                    <div class="relative h-24 w-full mb-8">
+                        <svg class="w-full h-full overflow-visible" viewBox="0 0 300 80" preserveAspectRatio="none">
+                            <!-- Background Path (Dotted) -->
+                            <path d="M10,70 Q150,-10 290,70" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" class="text-neutral-300 dark:text-neutral-800"></path>
+                            <!-- Animated Path -->
+                            <path d="M10,70 Q150,-10 290,70" fill="none" stroke="currentColor" stroke-width="1.5" class="text-black dark:text-white flight-path"></path>
+                            <!-- Plane Icon -->
+                            <g class="plane-icon text-black dark:text-white" style="offset-path: path('M10,70 Q150,-10 290,70');">
+                                <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2 1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="currentColor" transform="rotate(90) scale(0.8)"/>
+                            </g>
+                        </svg>
+                        <div class="absolute bottom-0 left-0 font-mono text-sm font-bold text-black dark:text-white">PAR</div>
+                        <div class="absolute bottom-0 right-0 font-mono text-sm font-bold text-black dark:text-white">TYO</div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mt-4">
+                        <h3 class="text-3xl md:text-4xl font-serif text-black dark:text-white mb-2" data-i18n="dest_japan">Japon</h3>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500" data-i18n="dest_japan_desc">Tradition & Néons</p>
                     </div>
                 </div>
             </div>
@@ -345,7 +412,7 @@
     </section>
 
     <!-- Footer -->
-    <footer id="contact" class="bg-white dark:bg-black py-24 md:py-32 border-t border-neutral-200 dark:border-white/10 relative overflow-hidden transition-colors duration-300">
+    <footer id="contact" class="bg-white dark:bg-black py-24 md:py-32 border-t border-neutral-200 dark:border-white/10 relative overflow-hidden transition-colors duration-500 ease-expo">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.03] dark:opacity-5 pointer-events-none select-none">
             <h2 class="text-[5rem] md:text-[15rem] font-serif whitespace-nowrap text-black dark:text-white">ONYMOUSAN</h2>
         </div>
@@ -355,11 +422,10 @@
             <p class="text-neutral-600 dark:text-neutral-400 mb-12 max-w-lg mx-auto font-light text-lg" data-i18n="contact_text">Disponible pour des projets photo à Paris ou pour accompagner un voyage à l'étranger.</p>
 
             <div class="flex flex-col items-center gap-8 mb-16">
-                <!-- Enhanced CTA Button -->
-                <!-- Use a standard mailto link, updated dynamically via JS -->
-                <a id="email-btn" href="mailto:a_michaux@outlook.com" class="group relative px-10 py-5 overflow-hidden rounded-full bg-black dark:bg-white text-white dark:text-black transition-all duration-300 hover:shadow-2xl hover:scale-105">
-                    <div class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-[100%] group-hover:animate-[shimmer_1.5s_infinite] pointer-events-none"></div>
-                    <span class="relative flex items-center gap-3 font-medium uppercase tracking-widest text-sm">
+                <!-- Enhanced CTA Button - Classy & Functional -->
+                <!-- Removed shimmer, added scale and tracking transition for elegance -->
+                <a id="email-btn" href="mailto:a_michaux@outlook.com" class="group relative px-10 py-5 overflow-hidden rounded-full bg-black dark:bg-white text-white dark:text-black transition-all duration-500 ease-expo hover:shadow-2xl hover:scale-105 hover:tracking-[0.1em]">
+                    <span class="relative flex items-center gap-3 font-medium uppercase tracking-widest text-sm transition-all duration-500 ease-expo group-hover:gap-4">
                         <span class="material-symbols-outlined">mail</span>
                         <span data-i18n="btn_email">Démarrer un Projet</span>
                     </span>
@@ -427,18 +493,22 @@
                 tag_travel: "Voyage",
                 gallery_title: "Highlights",
                 gallery_subtitle: "Sélection Parisienne",
-                dest_title: "Prochaines Visions",
+                dest_title: "Roadmap & Projets",
                 dest_nyc: "New York",
                 dest_nyc_desc: "Verticalité & Chaos",
                 dest_japan: "Japon",
                 dest_japan_desc: "Tradition & Néons",
                 dest_goal: "Objectif",
+                status_planned: "PLANIFIÉ",
                 contact_title: "Collaborons",
                 contact_text: "Disponible pour des projets photo à Paris ou pour accompagner un voyage à l'étranger.",
                 btn_email: "Démarrer un Projet",
                 rights: "Tous droits réservés.",
                 mail_subject: "Proposition de collaboration / Projet photo",
-                mail_body: "Bonjour Onymousan,\n\nJe souhaiterais discuter d'un projet de photographie avec vous...\n\nCordialement,"
+                mail_body: "Bonjour Onymousan,\n\nJe souhaiterais discuter d'un projet de photographie avec vous...\n\nCordialement,",
+                // Meta Translations
+                meta_title: "Onymousan | Photographe Street Photography Paris",
+                meta_desc: "Portfolio de Onymousan, photographe de rue à Paris. Une exploration visuelle du chaos organique et de l'architecture urbaine en noir et blanc."
             },
             en: {
                 nav_gallery: "Portfolio",
@@ -455,18 +525,22 @@
                 tag_travel: "Travel",
                 gallery_title: "Highlights",
                 gallery_subtitle: "Parisian Selection",
-                dest_title: "Next Visions",
+                dest_title: "Roadmap & Projects",
                 dest_nyc: "New York",
                 dest_nyc_desc: "Verticality & Chaos",
                 dest_japan: "Japan",
                 dest_japan_desc: "Tradition & Neons",
                 dest_goal: "Goal",
+                status_planned: "PLANNED",
                 contact_title: "Let's Collaborate",
                 contact_text: "Available for photo projects in Paris or to accompany a trip abroad.",
                 btn_email: "Start a Project",
                 rights: "All rights reserved.",
                 mail_subject: "Collaboration Proposal / Photo Project",
-                mail_body: "Hi Onymousan,\n\nI would like to discuss a photography project with you...\n\nBest regards,"
+                mail_body: "Hi Onymousan,\n\nI would like to discuss a photography project with you...\n\nBest regards,",
+                // Meta Translations
+                meta_title: "Onymousan | Street Photography Paris",
+                meta_desc: "Onymousan Portfolio. Urban exploration and street photography in Paris, NY, Tokyo. Capturing organic chaos and architecture."
             }
         };
 
@@ -479,7 +553,6 @@
                 srcFull: "https://images.pexels.com/photos/34951301/pexels-photo-34951301.jpeg?auto=compress&cs=tinysrgb&w=3000", 
                 title: { fr: "Carrefour", en: "Intersection" },
                 subtitle: { fr: "Flux & Architecture", en: "Flow & Architecture" },
-                className: "col-span-12 md:col-span-6", // Balanced Start (50%)
                 altText: { 
                     fr: "Grand carrefour parisien ensoleillé avec immeuble haussmannien et couple sur scooter vert, ambiance urbaine dynamique.", 
                     en: "Sunny Parisian intersection with Haussmann building and couple on green scooter, dynamic urban atmosphere." 
@@ -491,7 +564,6 @@
                 srcFull: "https://images.pexels.com/photos/34951415/pexels-photo-34951415.jpeg?auto=compress&cs=tinysrgb&w=3000",
                 title: { fr: "Rue La Fontaine", en: "Rue La Fontaine" },
                 subtitle: { fr: "Générations", en: "Generations" },
-                className: "col-span-12 md:col-span-6", // Balanced Start (50%)
                 altText: {
                     fr: "Scène de rue Paris 16e, rue Jean de La Fontaine, contraste de générations entre jeunes en maillot de foot et homme âgé.",
                     en: "Street scene in Paris 16th, Rue Jean de La Fontaine, generational contrast between youths in soccer jersey and older man."
@@ -503,7 +575,6 @@
                 srcFull: "https://images.pexels.com/photos/34951324/pexels-photo-34951324.jpeg?auto=compress&cs=tinysrgb&w=3000",
                 title: { fr: "38 Saint Louis", en: "38 Saint Louis" },
                 subtitle: { fr: "Le Lecteur", en: "The Reader" },
-                className: "col-span-12 md:col-span-4", // Vertical Highlight (33%)
                 altText: {
                     fr: "Homme lisant paisiblement en terrasse d'un vieux café parisien rue Saint Louis, devant une façade authentique.",
                     en: "Man reading peacefully on the terrace of an old Parisian cafe on Rue Saint Louis, in front of an authentic facade."
@@ -515,7 +586,6 @@
                 srcFull: "https://images.pexels.com/photos/34951307/pexels-photo-34951307.jpeg?auto=compress&cs=tinysrgb&w=3000",
                 title: { fr: "Conversation", en: "Conversation" },
                 subtitle: { fr: "Groupe Urbain", en: "Urban Group" },
-                className: "col-span-12 md:col-span-8", // Wide Context (66%)
                 altText: {
                     fr: "Trois personnes âgées discutant sur le trottoir devant une vitrine moderne Fursac, contraste social et urbain.",
                     en: "Three elderly people chatting on the sidewalk in front of a modern Fursac window display, social and urban contrast."
@@ -527,7 +597,6 @@
                 srcFull: "https://images.pexels.com/photos/34951209/pexels-photo-34951209.jpeg?auto=compress&cs=tinysrgb&w=3000",
                 title: { fr: "Costes", en: "Costes" },
                 subtitle: { fr: "Intemporel", en: "Timeless" },
-                className: "col-span-12 md:col-span-7", // Cinematic (58%)
                 altText: {
                     fr: "Photographie noir et blanc de la façade à arcades du restaurant Costes avec une voiture ancienne, ambiance intemporelle.",
                     en: "Black and white photography of the Costes restaurant arcade facade with a vintage car, timeless atmosphere."
@@ -539,7 +608,6 @@
                 srcFull: "https://images.pexels.com/photos/34951408/pexels-photo-34951408.jpeg?auto=compress&cs=tinysrgb&w=3000",
                 title: { fr: "Nocturne", en: "Nocturne" },
                 subtitle: { fr: "Solitude", en: "Solitude" },
-                className: "col-span-12 md:col-span-5", // Intimate (42%)
                 altText: {
                     fr: "Vue de nuit cinématographique d'une laverie parisienne éclairée avec une personne seule à l'intérieur.",
                     en: "Cinematic night view of a lit Parisian laundromat with a lone person inside."
@@ -551,7 +619,6 @@
                 srcFull: "https://images.pexels.com/photos/34951198/pexels-photo-34951198.jpeg?auto=compress&cs=tinysrgb&w=3000",
                 title: { fr: "L'Ouvrier", en: "The Worker" },
                 subtitle: { fr: "Hauteur", en: "Heights" },
-                className: "col-span-12 md:col-span-5", // Vertical Worker (42%)
                 altText: {
                     fr: "Ouvrier sur une échelle travaillant sur une façade haussmannienne classique, photo noir et blanc en contre-plongée.",
                     en: "Worker on a ladder working on a classic Haussmann facade, low angle black and white photo."
@@ -563,7 +630,6 @@
                 srcFull: "https://images.pexels.com/photos/34951146/pexels-photo-34951146.jpeg?auto=compress&cs=tinysrgb&w=3000",
                 title: { fr: "Lifestyle", en: "Lifestyle" },
                 subtitle: { fr: "Contemplation", en: "Contemplation" },
-                className: "col-span-12 md:col-span-7", // Lifestyle Context (58%)
                 altText: {
                     fr: "Personne âgée regardant une vitrine Polo & Argentina Lifestyle, jeu de reflets urbains en noir et blanc.",
                     en: "Elderly person looking at a Polo & Argentina Lifestyle window display, urban reflection play in black and white."
@@ -687,6 +753,11 @@
 
         function updateLanguageUI() {
             document.getElementById('lang-display').textContent = currentLang.toUpperCase();
+            
+            // Dynamic SEO Metadata
+            document.title = translations[currentLang].meta_title;
+            document.querySelector('meta[name="description"]').setAttribute("content", translations[currentLang].meta_desc);
+
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (translations[currentLang][key]) {
@@ -735,13 +806,13 @@
         function renderGallery() {
             const grid = document.getElementById('gallery-grid');
             
-            // Asymmetrical Editorial Layout: Using CSS Grid with custom spans defined in data
+            // Masonry Editorial Layout
             // Removed object-cover to ensure natural aspect ratio and zero cropping
             grid.innerHTML = galleryImages.map((img, index) => {
                 const altText = img.altText[currentLang] || img.title[currentLang];
                 
                 return `
-                <div class="${img.className} gallery-item relative group overflow-hidden cursor-pointer w-full rounded-sm" onclick="openLightbox(${index})">
+                <div class="gallery-item relative group overflow-hidden cursor-pointer w-full rounded-sm mb-6 break-inside-avoid" onclick="openLightbox(${index})">
                     <img 
                         alt="${altText}" 
                         class="w-full h-auto block will-change-transform shadow-sm dark:shadow-none animate-load" 
@@ -750,11 +821,11 @@
                         decoding="async"
                         onload="this.classList.add('loaded')"
                     />
-                    <div class="gallery-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-500 flex flex-col justify-center items-center text-center p-4">
-                        <span class="font-serif text-xl md:text-2xl text-white italic translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                    <div class="gallery-overlay absolute inset-0 bg-black/40 opacity-0 transition-opacity duration-700 ease-expo flex flex-col justify-center items-center text-center p-4">
+                        <span class="font-serif text-xl md:text-2xl text-white italic translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-expo delay-100">
                             ${img.title[currentLang]}
                         </span>
-                        <span class="text-xs text-white/80 uppercase tracking-widest mt-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-150">
+                        <span class="text-xs text-white/80 uppercase tracking-widest mt-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-700 ease-expo delay-200">
                             ${img.subtitle[currentLang]}
                         </span>
                     </div>
@@ -829,4 +900,4 @@
         init();
     </script>
 </body>
-</html>--- END OF FILE index.html ---
+</html>

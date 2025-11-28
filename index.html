@@ -335,7 +335,7 @@
             </div>
 
             <!-- Technical Flight Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
                 <!-- NYC Card -->
                 <div class="group relative bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 p-8 hover:border-black dark:hover:border-white transition-all duration-700 ease-expo shadow-sm hover:shadow-xl rounded-sm overflow-hidden">
                     <!-- Top Technical Data -->
@@ -405,6 +405,42 @@
                     <div class="mt-4">
                         <h3 class="text-3xl md:text-4xl font-serif text-black dark:text-white mb-2" data-i18n="dest_japan">Japon</h3>
                         <p class="text-xs uppercase tracking-widest text-neutral-500" data-i18n="dest_japan_desc">Tradition & Néons</p>
+                    </div>
+                </div>
+
+                <!-- London Card (Train) -->
+                <div class="group relative bg-white dark:bg-black border border-neutral-200 dark:border-neutral-800 p-8 hover:border-black dark:hover:border-white transition-all duration-700 ease-expo shadow-sm hover:shadow-xl rounded-sm overflow-hidden">
+                    <!-- Top Technical Data -->
+                    <div class="flex justify-between items-start mb-8 font-mono text-[10px] md:text-xs text-neutral-400 dark:text-neutral-500">
+                        <div class="flex flex-col gap-1">
+                            <span class="tracking-widest">TRN: PAR-LON</span>
+                            <span class="tracking-widest">DIST: 456 KM</span>
+                        </div>
+                        <div class="border border-neutral-200 dark:border-neutral-800 px-2 py-1 rounded-sm bg-neutral-50 dark:bg-neutral-900">
+                            STATUS: <span class="text-black dark:text-white font-bold" data-i18n="status_planned">PLANIFIÉ</span>
+                        </div>
+                    </div>
+
+                    <!-- SVG Train Animation -->
+                    <div class="relative h-24 w-full mb-8">
+                        <svg class="w-full h-full overflow-visible" viewBox="0 0 300 80" preserveAspectRatio="none">
+                            <!-- Background Path (Dotted) -->
+                            <path d="M10,70 Q150,40 290,70" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="4 4" class="text-neutral-300 dark:text-neutral-800"></path>
+                            <!-- Animated Path -->
+                            <path d="M10,70 Q150,40 290,70" fill="none" stroke="currentColor" stroke-width="1.5" class="text-black dark:text-white flight-path"></path>
+                            <!-- Train Icon (Eurostar style) -->
+                            <g class="plane-icon text-black dark:text-white" style="offset-path: path('M10,70 Q150,40 290,70');">
+                                <path d="M-12,-3.5 L2,-3.5 C9,-3.5 13,0 13,0 C13,0 9,3.5 2,3.5 L-12,3.5 Z" fill="currentColor" transform="scale(0.9)"/>
+                            </g>
+                        </svg>
+                        <div class="absolute bottom-0 left-0 font-mono text-sm font-bold text-black dark:text-white">PAR</div>
+                        <div class="absolute bottom-0 right-0 font-mono text-sm font-bold text-black dark:text-white">LON</div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mt-4">
+                        <h3 class="text-3xl md:text-4xl font-serif text-black dark:text-white mb-2" data-i18n="dest_london">Londres</h3>
+                        <p class="text-xs uppercase tracking-widest text-neutral-500" data-i18n="dest_london_desc">Brouillard & Brique</p>
                     </div>
                 </div>
             </div>
@@ -498,6 +534,8 @@
                 dest_nyc_desc: "Verticalité & Chaos",
                 dest_japan: "Japon",
                 dest_japan_desc: "Tradition & Néons",
+                dest_london: "Londres",
+                dest_london_desc: "Brouillard & Brique",
                 dest_goal: "Objectif",
                 status_planned: "PLANIFIÉ",
                 contact_title: "Collaborons",
@@ -530,6 +568,8 @@
                 dest_nyc_desc: "Verticality & Chaos",
                 dest_japan: "Japan",
                 dest_japan_desc: "Tradition & Neons",
+                dest_london: "London",
+                dest_london_desc: "Fog & Brick",
                 dest_goal: "Goal",
                 status_planned: "PLANNED",
                 contact_title: "Let's Collaborate",
